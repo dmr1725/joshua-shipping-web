@@ -32,7 +32,7 @@
     display: none;
 }
  
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
     .header-container {
         /* flex-direction: column; */
         justify-content: space-between;

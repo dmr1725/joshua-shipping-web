@@ -19,6 +19,10 @@ body {
   background: var(--background);
 }
 
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
