@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import {Logo} from '../../logo';
 import {Button} from '../../button/button'
 import styles from './header.module.css'
@@ -15,13 +16,25 @@ export default function Header() {
     <div>
       <div className={styles['header-shadow']}>
         <div className={styles['header-container']}>
-          <Logo src='/landing/logo/dark_jsl.svg'/>
+          <Logo src='/logo/dark_jsl.svg'/>
           <div className={styles['hamburger']} onClick={toggleMenu}>
-            <GiHamburgerMenu size={24} />
+            {
+              !menuOpen ? (
+                <GiHamburgerMenu size={24} />
+              ) : (
+                <Image 
+                    src='/icons/x.svg'
+                    alt='jsl logo'
+                    layout='responsive'
+                    width={100}
+                    height={50}  
+                />
+              )
+            }
           </div>
           <div className={styles['header-info-container']}>
-            <div>About Us</div>
-            <div>Contact Us</div>
+            <div className={styles['header-info']}>About Us</div>
+            <div className={styles['header-info']}>Contact Us</div>
           </div>
           <div className={`${styles['sign-in-button']} flex`}>
             <Button className={`w-[7.5rem]`}>
