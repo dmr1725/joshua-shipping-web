@@ -18,6 +18,11 @@
     gap: 6.25rem;
 }
 
+.header-info:hover {
+    cursor: pointer;
+    color: #C84D17;
+}
+
 .hamburger {
     display: none;
     cursor: pointer; 
