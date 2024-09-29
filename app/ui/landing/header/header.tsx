@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import {Logo} from '../../logo';
-import {Button} from '../../button/button'
+import {Logo} from '@/app/ui/logo';
+import {Button} from '@/app/ui/button/button'
 import styles from './header.module.css'
 import { GiHamburgerMenu } from "react-icons/gi";
 
-export default function Header() {
+export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
