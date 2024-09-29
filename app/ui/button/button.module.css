@@ -1,0 +1,9 @@
+.button {
+    border-radius: 2.375rem;
+    background: var(--Primary-Button-Gradient, linear-gradient(100deg, #FF834C 4.3%, #E74700 79.33%));
+    color: var(--FFFFFF, #FFF);
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.125rem;
+    height: 3.75rem;
+}

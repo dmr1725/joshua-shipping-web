@@ -1,0 +1,7 @@
+.test {
+   border-bottom: 0.5px solid var(--87B7D1, #87B7D1);
+   background: var(--F0F7FA, #F0F7FA);
+
+   /* Header Drop Shadow */
+   box-shadow: 2px 2px 9px 0.5px rgba(135, 183, 209, 0.25);
+}

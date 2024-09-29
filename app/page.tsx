@@ -1,7 +1,10 @@
+import {onest} from '@/app/ui/fonts';
+import Header from '@/app/ui/landing/header'
 
-
-export default function Home() {
+export default function Landing() {
   return (
-    <div>Hello world</div>
+    <div className={onest.className}>
+      <Header/>
+    </div>
   );
 }
