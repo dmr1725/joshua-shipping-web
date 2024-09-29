@@ -1,0 +1,40 @@
+.hero-section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 8rem;
+    padding: 0rem 16rem 0rem 16rem;
+}
+
+.text-container {
+    display: flex;
+    width: 31rem;
+    flex-direction: column;
+    gap: 1.875rem;
+    flex-shrink: 0;
+}
+
+.text-container div:first-child {
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text-container div:nth-child(2) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text-container strong {
+    color: #DF642D;
+}
+
+.warehouse-container {
+    width: 37.5rem;
+    height: 37.5rem;
+    flex-shrink: 0;
+}
