@@ -1,5 +1,5 @@
 import {onest} from '@/app/ui/fonts';
-import Header from '@/app/ui/landing/header'
+import Header from '@/app/ui/landing/header/header'
 
 export default function Landing() {
   return (
