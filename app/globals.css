@@ -4,7 +4,7 @@
 
 :root {
   --background: var(--F0F7FA, #F0F7FA); /* jsl background */
-  --foreground: #171717;
+  --foreground: #04283A;
 }
 
 @media (prefers-color-scheme: light) {
