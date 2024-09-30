@@ -5,7 +5,7 @@ import styles from './hero-section.module.css'
 export const HeroSection = () => {
   return (
     <div>
-        <div className='pt-[5.75rem]'>
+        <div className={`${styles['hero-parent']} pt-[5.75rem]`}>
             <div className={styles['hero-section-container']}>
                 <div className={styles['text-container']}>
                     <div><strong>Streamlined</strong> logistics services for <strong>seamless</strong> deliveries</div>
