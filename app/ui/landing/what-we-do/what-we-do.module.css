@@ -25,6 +25,7 @@
     align-self: stretch;
     width: 31rem;
     padding: 0.94rem;
+    cursor: pointer;
 }
 
 .selected-card {
