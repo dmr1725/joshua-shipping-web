@@ -13,7 +13,7 @@ export const Header = () => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <div>
+    <div className={styles['sticky']}>
       <div className={styles['header-shadow']}>
         <div className={styles['header-container']}>
           <Logo src='/logo/dark_jsl.svg'/>
