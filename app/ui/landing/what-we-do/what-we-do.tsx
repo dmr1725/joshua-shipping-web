@@ -46,10 +46,10 @@ export const WhatWeDo = () => {
             <div className={styles['what-we-do-container']}>
                 <div>
                     <div className='text-4xl font-bold leading-normal not-italic'>What We Do</div>
-                    <div className='w-[37.5rem] text-lg font-normal leading-normal not-italic'>We provide logistics services tailored to your business needs. With our proprietary client dashboard, you will will receive updates in real time about everything related to your items.</div>
+                    <div className='w-[100%] lg:w-[37.5rem] text-lg font-normal leading-normal not-italic'>We provide logistics services tailored to your business needs. With our proprietary client dashboard, you will will receive updates in real time about everything related to your items.</div>
                 </div>
                 <div className={styles['cards-outer-container']}>
-                    <img src={selectedCard.image}/>
+                    <img className={styles['selected-image']} src={selectedCard.image}/>
                     <div className={styles['cards-inner-container']}>
                         {cards.map((card) => (
                             <div 

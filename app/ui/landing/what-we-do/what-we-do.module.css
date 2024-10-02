@@ -62,3 +62,28 @@
     line-height: normal;
     width: 100%;
 }
+
+@media (max-width: 64rem) {
+    .what-we-do-container {
+        padding: 0.94rem;
+    }
+
+    .card-container {
+        width: 100%;
+    }
+
+    /* This class only exists on mobile */
+    .selected-image {
+        display: none;
+    }
+
+    .cards-outer-container {
+        padding-right: 2rem;
+    }
+
+    .selected-card {
+        background: none;
+    }
+
+
+}
