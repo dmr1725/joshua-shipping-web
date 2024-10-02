@@ -4,18 +4,19 @@
 
 :root {
   --background: var(--F0F7FA, #F0F7FA); /* jsl background */
-  --foreground: #04283A;
+  --foreground: #1B1C2D;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--F0F7FA, #F0F7FA); /* jsl background */
+    --foreground: #1B1C2D;
   }
 }
 
 body {
-  color: var(--foreground);
+  /* color: var(--foreground); */
+  color: #1B1C2D;
   background: var(--background);
 }
 
