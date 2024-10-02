@@ -20,8 +20,11 @@ body {
   background: var(--background);
 }
 
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+@media (max-width: 64rem) {
+  html, body {
+    /* Prevent horizontal scrolling globally in mobile */
+   overflow-x: hidden;
+ }
 }
 
 @layer utilities {
