@@ -1,0 +1,62 @@
+.how-it-works-container {
+    display: flex;
+    padding: 0rem 6.75rem 5rem 6.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.75rem;
+}
+
+.how-it-works-header {
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self: stretch;
+}
+
+.how-it-works-text {
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 37.5rem;
+}
+
+.steps-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.steps-card-container {
+    display: flex;
+    width: 24.5rem;
+    height: 32.875rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.step-image {
+    width: 24.5rem;
+    height: 24.5rem;
+    flex-shrink: 0;
+}
+
+.step-header {
+    color: var(--2D7FA9, #2D7FA9);
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.step-text {
+    text-align: center;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: stretch;
+}
