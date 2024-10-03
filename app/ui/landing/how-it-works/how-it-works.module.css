@@ -30,7 +30,7 @@
 
 .steps-card-container {
     display: flex;
-    width: 24.5rem;
+    width: 100%;
     height: 32.875rem;
     flex-direction: column;
     align-items: center;
