@@ -15,21 +15,21 @@ export const WhatWeDo = () => {
         {
             id: 1,
             image: 'cards/preview1.png',
-            icon: 'icons/container.svg',
+            icon: 'icons/container2.svg',
             title: 'Pick Up and Transportation',
             text: 'We begin with shipment pick-up at the port and assist with customs brokerage to ensure compliance with regulations and smooth clearance processes. Once cleared, items are transported in temperature-controlled vehicles to ensure optimal freshness.'
         },
         {
             id: 2,
             image: 'cards/preview2.png',
-            icon: 'icons/inventory.svg',
+            icon: 'icons/inventory2.svg',
             title: 'Inventory Tracking',
             text: 'We utilize advanced inventory tracking systems to manage stock levels efficiently and provide you with real-time updates. You will be able to view and manage your inventory through your personalized client dashboard.'
         },
         {
             id: 3,
             image: 'cards/preview3.png',
-            icon: 'icons/truck.svg',
+            icon: 'icons/truck2.svg',
             title: 'Dispatch and Delivery',
             text: 'You will be able to schedule deliveries through your dashboard. We will promptly deliver them to meet your business arrangements, ensuring that products reach local businesses and markets promptly.'
         }
