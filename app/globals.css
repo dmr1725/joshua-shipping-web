@@ -20,6 +20,12 @@ body {
   background: var(--background);
 }
 
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the wrapper takes full viewport height */
+}
+
 @media (max-width: 64rem) {
   html, body {
     /* Prevent horizontal scrolling globally in mobile */

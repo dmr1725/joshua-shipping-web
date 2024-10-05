@@ -9,6 +9,8 @@
     background: var(--04283A, #04283A);
     /* Drop Shadow for Sections */
     box-shadow: 0px 0px 10.8px 0.5px rgba(135, 183, 209, 0.30);
+    margin-top: auto; /* This pushes the footer to the bottom */
+
 }
 
 .jsl-logo-container {
