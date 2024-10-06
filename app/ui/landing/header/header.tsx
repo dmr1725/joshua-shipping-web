@@ -39,7 +39,9 @@ export const Header = () => {
             <Link href="/about-us">
                 <div className={styles['header-info']}>About Us</div>
             </Link>
-            <div className={styles['header-info']}>Contact Us</div>
+            <Link href="/contact-us">
+              <div className={styles['header-info']}>Contact Us</div>
+            </Link>
           </div>
           <div className={`${styles['sign-in-button']}`}>
             <Button className={`w-[7.5rem]`}>
