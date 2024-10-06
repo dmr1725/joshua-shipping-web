@@ -53,8 +53,12 @@ export const Header = () => {
 
       {menuOpen && (
         <div className={styles['dropdown-menu']}>
-          <div>About Us</div>
-          <div>Contact Us</div>
+          <Link href="/about-us">
+              <div className={styles['header-info']}>About Us</div>
+          </Link>
+          <Link href="/contact-us">
+            <div className={styles['header-info']}>Contact Us</div>
+          </Link>
           <Button className='w-full'>Sign In</Button>
         </div>
       )}
