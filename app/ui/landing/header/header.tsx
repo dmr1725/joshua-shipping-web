@@ -5,6 +5,7 @@ import {Logo} from '@/app/ui/logo';
 import {Button} from '@/app/ui/button/button'
 import styles from './header.module.css'
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from 'next/link'; 
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,10 +34,12 @@ export const Header = () => {
             }
           </div>
           <div className={styles['header-info-container']}>
-            <div className={styles['header-info']}>About Us</div>
+            <Link href="/about-us">
+                <div className={styles['header-info']}>About Us</div>
+            </Link>
             <div className={styles['header-info']}>Contact Us</div>
           </div>
-          <div className={`${styles['sign-in-button']} flex`}>
+          <div className={`${styles['sign-in-button']}`}>
             <Button className={`w-[7.5rem]`}>
               Sign In
             </Button>
