@@ -3,7 +3,7 @@ import styles from './footer.module.css'
 
 export const Footer = () => {
     return (
-        <div className={styles['footer-container']}>
+        <footer className={styles['footer-container']}>
             <div className={styles['jsl-logo-container']}>
                 <img src='/logo/light_jsl.svg'/>
                 <div className={styles['jsl-footer-text-style']}>Streamlined logistics services for seamless deliveries.</div>
@@ -22,6 +22,6 @@ export const Footer = () => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

@@ -37,7 +37,7 @@ export const Header = () => {
   console.log(menuOpen)
 
   return (
-    <div className={styles['sticky']}>
+    <header className={styles['sticky']}>
       <div className={styles['header-shadow']}>
         <div className={styles['header-container']}>
           <Link href="/">
@@ -84,6 +84,6 @@ export const Header = () => {
           <Button className='w-full' onClick={toggleMenu}>Sign In</Button>
         </div>
       )}
-    </div>
+    </header>
   );
 };
