@@ -11,7 +11,7 @@ export const HeroSection = () => {
                 <div className={styles['text-container']}>
                     <div><strong>Streamlined</strong> logistics services for <strong>seamless</strong> deliveries</div>
                     <div>Ensuring fresh deliveries from supplier to market, every time.</div>
-                    <Link href="/contact-us">
+                    <Link href="/contact-us" className="w-[7.5rem]">
                         <Button className={`w-[7.5rem]`}>Get Quote</Button>
                     </Link>
                 </div>

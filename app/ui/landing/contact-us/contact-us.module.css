@@ -73,7 +73,7 @@
 
 @media (max-width: 64rem) {
     .contact-us-container {
-        padding: 5rem 0rem;
+        margin-top: 3.75rem;
     }
 
     .contact-us-form {

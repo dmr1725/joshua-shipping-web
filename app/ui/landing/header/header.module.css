@@ -40,6 +40,12 @@
 }
  
 @media (max-width: 64rem) {
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
     .header-container {
         justify-content: space-between;
         padding: 0.375rem 0rem;
