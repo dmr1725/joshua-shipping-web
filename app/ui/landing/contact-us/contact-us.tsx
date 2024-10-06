@@ -65,9 +65,11 @@ export const ContactUs = () => {
                         </div>
                     </div>
                 </div>
-                <Button className={`w-[100%]`}>
-                    Submit
-                </Button>
+                <div className='pt-[1rem] w-[100%]'>
+                    <Button className={`w-[100%]`}>
+                        Submit
+                    </Button>
+                </div>
             </div>
         </div>
     )
