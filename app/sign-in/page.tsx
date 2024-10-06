@@ -1,5 +1,4 @@
-import { Sign } from "crypto"
-import { SignIn } from "../ui/sign-in/sign-in"
+import { SignIn } from "@/app/ui/sign-in/sign-in"
 
 export default function SignInPage() {
     return (
