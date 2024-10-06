@@ -1,0 +1,86 @@
+
+.contact-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 5rem 0rem;
+    width: 100%;
+}
+
+.contact-us-header {
+    text-align: center;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+}
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    align-self: stretch;
+    padding: 0rem 25.5rem;
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0rem 0.75rem;
+}
+
+.sm-input-container {
+    display: flex;
+    height: 4.0625rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex: 1 0 0;
+    width: 100%;
+}
+
+.label-style {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.input-background {
+    background: #F0F7FA;
+    width: 100%;
+    height: 3rem;
+}
+
+.input-line {
+    border-bottom: 1.5px solid #1B1C2D;
+    width: 100%;
+}
+
+@media (max-width: 64rem) {
+    .contact-us-container {
+        margin-top: 3.75rem;
+    }
+
+    .contact-us-form {
+        padding: 0rem 2rem;
+    }
+
+    .label-style {
+        font-size: 0.75rem;
+    }
+}

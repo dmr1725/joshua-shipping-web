@@ -3,21 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--F0F7FA, #F0F7FA); /* jsl background */
+  --foreground: #1B1C2D;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--F0F7FA, #F0F7FA); /* jsl background */
+    --foreground: #1B1C2D;
   }
 }
 
 body {
-  color: var(--foreground);
+  /* color: var(--foreground); */
+  color: #1B1C2D;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the wrapper takes full viewport height */
+}
+
+@media (max-width: 64rem) {
+  html, body {
+    /* Prevent horizontal scrolling globally in mobile */
+   overflow-x: hidden;
+ }
 }
 
 @layer utilities {
