@@ -65,9 +65,11 @@ export const Header = () => {
             </Link>
           </div>
           <div className={`${styles['sign-in-button']}`}>
-            <Button className={`w-[7.5rem]`}>
-              Sign In
-            </Button>
+            <Link href="/sign-in">
+              <Button className={`w-[7.5rem]`}>
+                Sign In
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -81,7 +83,9 @@ export const Header = () => {
           <Link href="/contact-us">
             <div className={styles['header-info']} onClick={toggleMenu}>Contact Us</div>
           </Link>
-          <Button className='w-full' onClick={toggleMenu}>Sign In</Button>
+          <Link href="/sign-in">
+            <Button className='w-full' onClick={toggleMenu}>Sign In</Button>
+          </Link>
         </div>
       )}
     </header>
