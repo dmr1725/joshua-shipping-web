@@ -17,7 +17,9 @@ export const Header = () => {
     <div className={styles['sticky']}>
       <div className={styles['header-shadow']}>
         <div className={styles['header-container']}>
-          <Logo src='/logo/dark_jsl.svg'/>
+          <Link href="/">
+            <Logo src='/logo/dark_jsl.svg'/>
+          </Link>
           <div className={styles['hamburger']} onClick={toggleMenu}>
             {
               !menuOpen ? (
