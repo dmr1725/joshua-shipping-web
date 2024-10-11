@@ -18,18 +18,20 @@ export const SideBar = () => {
                         <div>Orders</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/payments.svg" alt="container"/>
-                        <div>Payments</div>
+                        <img className={styles['icon']} src="icons/invoice.svg" alt="container"/>
+                        <div>Invoices</div>
                     </div>
                     <div className={styles['icon-info']}>
                         <img className={styles['icon']} src="icons/truck2.svg" alt="container"/>
-                        <div>Dispatches</div>
+                        <div>Dispatch</div>
                     </div>
                 </div>
             </div>
-            <div className={styles['icon-info']}>
-                <img className={styles['icon']} src="icons/logout.svg" alt="container"/>
-                <div>Log Out</div>
+            <div className='pr-[5rem]'>
+                <div className={styles['icon-info']}>
+                    <img className={styles['icon']} src="icons/logout.svg" alt="container"/>
+                    <div>Log Out</div>
+                </div>
             </div>
         </div>
     )
