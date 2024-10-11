@@ -15,7 +15,7 @@
     font-weight: 700;
     line-height: normal;
     color: white;
-    background: var(--04283A, #04283A);
+    background: #04283A;
     /* Card Drop - Homepage */
     box-shadow: 2px 2px 6px 0.5px rgba(135, 183, 209, 0.25);
 }
