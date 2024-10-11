@@ -1,12 +1,10 @@
 .dashboard-container {
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Prevent full page scrolling */
 }
 
 .sidebar {
     width: 25%;
-    background-color: blue;
     position: fixed; /* Keep the sidebar fixed */
     top: 0;
     left: 0;
@@ -19,7 +17,6 @@
     flex-direction: column;
     width: 75%;
     padding: 0rem 4.5rem;
-    background-color: orange;
     overflow-y: auto; /* Enable scrolling within the content area */
     height: 100vh; /* Set content height to viewport height */
     gap: 2rem;
@@ -27,12 +24,10 @@
 
 .dashboard-header {
     height: 8.5rem; /* Fixed height for the header */
-    background-color: red;
     flex-shrink: 0; /* Prevent the header from shrinking when the content grows */
 }
 
 .children {
-    background-color: yellow;
     padding-top: 2rem;
     flex-grow: 1; /* Let the children grow to take available space */
 }
