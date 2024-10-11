@@ -22,7 +22,7 @@
     align-items: flex-start; /* Keep the icons and text left-aligned */
     gap: 1.875rem;
     width: fit-content; /* Only take up as much width as necessary */
-    padding-right: 4rem;
+    padding-right: 3rem;
 }
 
 .logo {

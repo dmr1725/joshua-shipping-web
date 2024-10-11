@@ -23,7 +23,7 @@ export const SideBar = () => {
                     </div>
                     <div className={styles['icon-info']}>
                         <img className={styles['icon']} src="icons/truck2.svg" alt="container"/>
-                        <div>Dispatch</div>
+                        <div>Dispatches</div>
                     </div>
                 </div>
             </div>
