@@ -16,6 +16,10 @@
     width: 100%; /* Ensure the sidebar info stretches */
 }
 
+.hamburger {
+    display: none;
+}
+
 .sidebar-options {
     display: flex;
     flex-direction: column;
@@ -25,8 +29,16 @@
     padding-right: 3rem;
 }
 
+.spacer {
+    flex-grow: 1; /* This pushes the Log Out button to the bottom */
+}
+
 .logo {
     padding: 0rem 3.15rem;
+}
+
+.logout-section {
+    padding-right: 5rem;
 }
 
 .icon-info {
@@ -40,4 +52,32 @@
 .icon {
     width: 2.25rem;
     height: 2.25rem;
+}
+
+@media (max-width: 64rem) {
+    .main-container {
+        padding: 1.3rem 2rem;
+    }
+
+    .sidebar-info {
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer; 
+    }
+
+    .sidebar-options {
+        display: none;
+    }
+
+    .logo {
+        margin-left: auto; /* This pushes the logo to the far right */
+        padding: 0;
+    }
+
+    .logout-section {
+        display: none;
+    }
 }

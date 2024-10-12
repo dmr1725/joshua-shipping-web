@@ -1,10 +1,33 @@
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Logo } from '../../logo';
 import styles from './sidebar.module.css';
 
 export const SideBar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+      };
+
     return (
         <div className={styles['main-container']}>
             <div className={styles['sidebar-info']}>
+                <div className={styles['hamburger']} onClick={toggleMenu}>
+                    {!menuOpen ? (
+                    <GiHamburgerMenu size={24} />
+                    ) : (
+                    <Image
+                        src='/icons/white_x.svg'
+                        alt='close menu'
+                        layout='responsive'
+                        width={100}
+                        height={50}
+                    />
+                    )}
+                </div>
                 <div className={styles['logo']}>
                     <Logo src='/logo/light_jsl.svg' />
                 </div>
@@ -27,7 +50,7 @@ export const SideBar = () => {
                     </div>
                 </div>
             </div>
-            <div className='pr-[5rem]'>
+            <div className={styles['logout-section']}>
                 <div className={styles['icon-info']}>
                     <img className={styles['icon']} src="icons/logout.svg" alt="container"/>
                     <div>Log Out</div>
