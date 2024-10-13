@@ -8,18 +8,18 @@ export const SignIn = () => {
             <div className={styles['form-container']}>
                 <div className={styles['sign-in-form-container']}>
                     <h1 className={styles['sign-in-form-header']}>Welcome Back!</h1>
-                    <div>
+                    <div className={styles['input-group']}>
                         <label className={styles['sign-in-label-style']} htmlFor="email">Email</label>
                         <div className={styles['input-container']}>
                             <input className={styles['input-background']} type="text" id="email" name="email" placeholder="Type here..."/>
                             <div className={styles['input-line']}></div>
                         </div>
                     </div>
-                </div>
-                <div className='w-[100%] pt-[1rem] px-[4rem] lg:px-[12rem] lg:w-[100%]'>
-                    <Button className={`w-[100%]`}>
-                        Login
-                    </Button>
+                    <div className={styles['button-container']}>
+                        <Button className={styles['button-style']}>
+                            Login
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
