@@ -49,7 +49,7 @@
 
     .sidebar {
         width: 100%; /* Full width on mobile */
-        height: 10vh; /* Only 10% of the height */
+        height: 5.5rem; /* Only 10% of the height */
     }
 
     .content {
