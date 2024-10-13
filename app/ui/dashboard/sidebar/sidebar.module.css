@@ -57,6 +57,9 @@
 @media (max-width: 64rem) {
     .main-container {
         padding: 1.3rem 2rem;
+        height: 10vh;
+        position: sticky;
+        top: 0;
     }
 
     .sidebar-info {

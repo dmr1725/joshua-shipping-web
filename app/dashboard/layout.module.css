@@ -44,15 +44,12 @@
 @media (max-width: 64rem) {
     .dashboard-container {
         flex-direction: column;
-        min-height: auto; /* Ensure it takes up full viewport height */
-        top: 0;
+        height: auto; /* Ensure it takes up full viewport height */
     }
 
     .sidebar {
         width: 100%; /* Full width on mobile */
         height: 10vh; /* Only 10% of the height */
-        position: sticky; /* Stick the sidebar to the top */
-        top: 0;
     }
 
     .content {
@@ -60,6 +57,10 @@
         width: 100%;
         padding: 1rem 2rem;
         overflow-y: visible; /* Enable vertical scrolling for content */
-        height: 90vh; /* Adjust height for scrolling content */
+        height: auto; /* Adjust height for scrolling content */
+    }
+
+    .dashboard-header {
+        padding-top: 7rem;
     }
 }
