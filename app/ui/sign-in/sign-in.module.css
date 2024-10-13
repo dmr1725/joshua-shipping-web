@@ -26,22 +26,30 @@
     padding-top: 50%;
 }
 
-.input-group {
-    width: 50%; /* Adjust this for the desired width of the input group */
-    padding-top: 1.5rem;
-}
-
 .sign-in-form-header {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: normal;
+    width: 50%; /* Set the same width as the input group */
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove any default margin */
 }
 
+.input-group {
+    width: 50%; /* Keep this to align with the header */
+    padding-top: 1.5rem; /* Maintain space above the input group */
+    display: flex; /* Use flex to align items properly */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+/* Adjust the label style if necessary */
 .sign-in-label-style {
     font-size: 1.25rem;
     font-weight: 700;
     line-height: normal;
-    width: 100%; /* Ensure the label takes full width */
+    width: 100%; /* Full width for label */
+    margin: 0; /* Remove any default margin */
 }
 
 .input-container {
@@ -77,24 +85,37 @@
 
 @media (max-width: 64rem) {
     .sign-in-container {
-        flex-direction: column;
+        flex-direction: column; /* Maintain column layout for mobile */
     }
 
     .login-image {
         width: 110%;
-        height: 50%; /* Height auto to maintain aspect ratio */
+        height: 50%; /* Adjust the height to maintain aspect ratio */
     }
 
     .sign-in-form-container {
-        padding-top: 5rem;
+        padding-top: 5rem; /* Keep adequate space above the form */
     }
 
     .input-group {
-        width: 80%; /* Adjust on mobile as necessary */
+        width: 80%; /* Ensure the input group takes up more width on mobile */
+        padding-top: 1.5rem; /* Maintain spacing above input group */
+    }
+
+    .sign-in-form-header {
+        width: 80%; /* Match the header width with the input group */
+        font-size: 2rem; /* Optional: Reduce font size for better fit */
+        text-align: left; /* Ensure left alignment */
+        margin: 0; /* Remove any default margin */
+    }
+
+    .sign-in-label-style {
+        width: 100%; /* Full width for label */
+        margin: 0; /* Remove margin */
     }
 
     .button-container {
-        width: 80%; /* Match input group width */
+        width: 80%; /* Match button container width with input group */
         padding-top: 1rem; /* Add some vertical spacing */
     }
 }
