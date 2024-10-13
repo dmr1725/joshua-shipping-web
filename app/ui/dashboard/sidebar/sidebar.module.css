@@ -1,0 +1,106 @@
+.main-container {
+    display: flex;
+    height: 100vh;
+    padding: 3.75rem 2.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center the entire sidebar content horizontally */
+    flex-shrink: 0;
+}
+
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the sidebar info content horizontally */
+    gap: 6.3125rem;
+    width: 100%; /* Ensure the sidebar info stretches */
+}
+
+.hamburger {
+    display: none;
+}
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keep the icons and text left-aligned */
+    gap: 1.875rem;
+    width: fit-content; /* Only take up as much width as necessary */
+    padding-right: 3rem;
+}
+
+.spacer {
+    flex-grow: 1; /* This pushes the Log Out button to the bottom */
+}
+
+.logo {
+    padding: 0rem 3.15rem;
+}
+
+.logout-section {
+    padding-right: 5rem;
+}
+
+.icon-info {
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.94rem;
+    justify-content: flex-start; /* Left align icons and text */
+    width: 100%; /* Make sure it stretches the width */
+}
+
+.icon {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+@media (max-width: 64rem) {
+    .main-container {
+        padding: 1.3rem 2rem;
+        height: 10vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .sidebar-info {
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer; 
+    }
+
+    .sidebar-options {
+        display: none;
+    }
+
+    .logo {
+        margin-left: auto; /* This pushes the logo to the far right */
+        padding: 0;
+    }
+
+    .logout-section {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute; /* Change to absolute or fixed */
+        top: 5.5rem; /* Adjust this value if necessary based on your layout */
+        padding-left: 1.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2.5rem;
+        width: 100%; /* Full width */
+        background: #04283A;
+        /* Card Drop - Homepage */
+        box-shadow: 2px 2px 6px 0.5px rgba(135, 183, 209, 0.25);
+    }
+}

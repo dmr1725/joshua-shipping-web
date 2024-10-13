@@ -1,0 +1,66 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 25%;
+    position: fixed; /* Keep the sidebar fixed */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ensure the sidebar spans the full height */
+    
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+    background: #04283A;
+    /* Card Drop - Homepage */
+    box-shadow: 2px 2px 6px 0.5px rgba(135, 183, 209, 0.25);
+}
+
+.content {
+    margin-left: 25%; /* Leave space for the fixed sidebar */
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 0rem 4.5rem;
+    overflow-y: auto; /* Enable scrolling within the content area */
+    height: 100vh; /* Set content height to viewport height */
+    gap: 2rem;
+}
+
+.dashboard-header {
+    height: 8.5rem; /* Fixed height for the header */
+    flex-shrink: 0; /* Prevent the header from shrinking when the content grows */
+}
+
+.children {
+    padding-top: 2rem;
+    flex-grow: 1; /* Let the children grow to take available space */
+}
+
+@media (max-width: 64rem) {
+    .dashboard-container {
+        flex-direction: column;
+        height: auto; /* Ensure it takes up full viewport height */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width on mobile */
+        height: 5.5rem; /* Only 10% of the height */
+    }
+
+    .content {
+        margin-left: 0; /* Full width for the content on mobile */
+        width: 100%;
+        padding: 1rem 2rem;
+        overflow-y: visible; /* Enable vertical scrolling for content */
+        height: auto; /* Adjust height for scrolling content */
+    }
+
+    .dashboard-header {
+        padding-top: 7rem;
+    }
+}

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Header } from "@/app/ui/landing/header/header";
-import { Footer } from "@/app/ui/landing/footer/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {

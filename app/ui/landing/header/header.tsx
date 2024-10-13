@@ -34,7 +34,6 @@ export const Header = () => {
     };
   }, [menuOpen]);
 
-  console.log(menuOpen)
 
   return (
     <header className={styles['sticky']}>
