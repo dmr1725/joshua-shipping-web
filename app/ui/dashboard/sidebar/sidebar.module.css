@@ -90,7 +90,7 @@
 
     .dropdown-menu {
         position: absolute; /* Change to absolute or fixed */
-        top: 9.5vh; /* Adjust this value if necessary based on your layout */
+        top: 5.5rem; /* Adjust this value if necessary based on your layout */
         padding-left: 1.5rem;
         padding-top: 2rem;
         padding-bottom: 2rem;
