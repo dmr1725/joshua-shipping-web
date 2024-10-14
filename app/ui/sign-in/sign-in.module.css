@@ -22,61 +22,100 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1rem;
     padding-top: 50%;
 }
 
 .sign-in-form-header {
     font-size: 2.25rem;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
+    width: 50%; /* Set the same width as the input group */
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove any default margin */
 }
 
+.input-group {
+    width: 50%; /* Keep this to align with the header */
+    padding-top: 1.5rem; /* Maintain space above the input group */
+    display: flex; /* Use flex to align items properly */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+/* Adjust the label style if necessary */
 .sign-in-label-style {
     font-size: 1.25rem;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
-    width: 100%;
-    padding-right: 13rem;
+    width: 100%; /* Full width for label */
+    margin: 0; /* Remove any default margin */
 }
 
 .input-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 100%;
+    width: 100%; /* Ensure the input container is full width */
 }
 
 .input-background {
-    width: 100%;
+    width: 100%; /* Full width to match button */
     height: 3rem;
     background-color: #F0F7FA;
 }
 
 .input-line {
     border-bottom: 1.5px solid #1B1C2D;
-    width: 100%;
+    width: 100%; /* Ensure the line matches the input width */
 }
 
+.button-container {
+    width: 53%; /* Make the button container full width */
+    padding-top: 0rem; /* Add some vertical spacing */
+}
+
+.button-style {
+    width: 100%; /* Ensure the button stretches to full width */
+    height: 3rem; /* Match the height of the input */
+    color: white; /* Adjust as needed */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer */
+}
 
 @media (max-width: 64rem) {
     .sign-in-container {
-        flex-direction: column;
+        flex-direction: column; /* Maintain column layout for mobile */
     }
 
     .login-image {
         width: 110%;
-        height: 50%; /* Height auto to maintain aspect ratio */
+        height: 50%; /* Adjust the height to maintain aspect ratio */
     }
 
     .sign-in-form-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        padding-top: 5rem;
+        padding-top: 5rem; /* Keep adequate space above the form */
+    }
+
+    .input-group {
+        width: 80%; /* Ensure the input group takes up more width on mobile */
+        padding-top: 1.5rem; /* Maintain spacing above input group */
+    }
+
+    .sign-in-form-header {
+        width: 80%; /* Match the header width with the input group */
+        font-size: 2rem; /* Optional: Reduce font size for better fit */
+        text-align: left; /* Ensure left alignment */
+        margin: 0; /* Remove any default margin */
+    }
+
+    .sign-in-label-style {
+        width: 100%; /* Full width for label */
+        margin: 0; /* Remove margin */
+    }
+
+    .button-container {
+        width: 80%; /* Match button container width with input group */
+        padding-top: 1rem; /* Add some vertical spacing */
     }
 }
