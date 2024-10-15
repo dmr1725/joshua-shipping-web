@@ -3,15 +3,15 @@ import styles from './layout.module.css'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles['dashboard-container']}>
-        <div className={styles['sidebar']}>
+    <div className={styles['dashboard-layout']}>
+        <div className={styles['sidebar-layout']}>
             <SideBar/>
         </div>
-        <div className={styles['content']}>
-            <div className={styles['dashboard-header']}>
+        <div className={styles['content-layout']}>
+            <div className={styles['header-layout']}>
                 Header
             </div>
-            <div className={styles['children']}>
+            <div className={styles['children-layout']}>
                 {children}
             </div>
         </div>
