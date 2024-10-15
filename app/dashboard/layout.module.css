@@ -26,7 +26,7 @@
     padding: 0rem 4.5rem;
     overflow-y: visible; /* Enable vertical scrolling */
     height: 100vh; /* Full height for content */
-    gap: 2rem; /* Space between elements */
+    gap: 1rem; /* Space between elements */
 }
 
 .header-layout {
@@ -35,7 +35,6 @@
 }
 
 .children-layout {
-    padding-top: 2rem;
     flex-grow: 1; /* Let children grow to take up space */
 }
 
