@@ -58,11 +58,10 @@
 .order-details {
     display: flex;
     justify-content: space-between;
-    background-color: #04283A;
+    background-color: #074A6B;
     color: white;
-    border-radius: 2rem 2rem 0rem 0rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 1rem 2rem;
 }
 
 .box-icon {
@@ -86,7 +85,7 @@
     border-radius: 1rem; /* Slightly larger rounding */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtler shadow */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effect */
-    background-color: #074A6B;
+    background-color: white;
 }
 
 .lot-container:hover {
@@ -100,7 +99,7 @@
     align-items: center; /* Align all elements to the left */
     width: 100%;
     font-weight: bold;
-    color: white;
+    color: #074A6B;
     font-size: 1.5rem;
 }
 

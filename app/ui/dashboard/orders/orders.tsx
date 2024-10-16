@@ -24,6 +24,14 @@ export const Orders = () => {
                             <div>October 16, 2024</div>
                         </div>
                         <div>
+                            <div>Bill of Lading</div>
+                            <div>CWPS4M097234</div>
+                        </div>
+                        <div>
+                            <div>Container #</div>
+                            <div>CMCU 5560770</div>
+                        </div>
+                        <div>
                             <div>Order # 114-4893-859</div>
                             <div>View order details</div>
                         </div>
