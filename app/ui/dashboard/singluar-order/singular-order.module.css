@@ -1,0 +1,105 @@
+.order-container {
+    width: 100%;
+    box-shadow: 2px 2px 6px 0.5px rgba(135, 183, 209, 0.50);
+    border-radius: 2rem;
+}
+
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #074A6B;
+    color: white;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 1rem 2rem;
+    font-weight: bolder;
+}
+
+.box-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.5rem; /* Adjust the spacing so icons are consistently aligned */
+}
+
+.lots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.lot-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem; /* Slightly larger rounding */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtler shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effect */
+    background-color: #E3F2FD; 
+}
+
+.lot-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.lot-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align all elements to the left */
+    width: 100%;
+    font-weight: bold;
+    color: #074A6B;
+    font-size: 1.5rem;
+}
+
+.lot-product {
+    display: flex;
+    align-items: center; /* Ensure icon and product details are aligned */
+    gap: 0.5rem; /* Space between text and icon */
+    margin-top: 0.5rem; /* Add some space between Lot # and product details */
+}
+
+.lot-product div {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 64rem) {
+
+    .order-details > div:not(:last-child) {
+        display: none;
+    }
+
+    .lot-container {
+        padding: 1rem; /* Reduce padding for better fit */
+        flex-direction: column; /* Stack items vertically */
+        gap: 0.75rem; /* Add some gap between elements for clarity */
+    }
+
+    .lot-font {
+        font-size: 1rem; /* Slightly reduce font size for smaller screens */
+        text-align: left; /* Align text to the left */
+    }
+
+    .lot-details {
+        flex-direction: column; /* Stack lot number and product vertically */
+        align-items: flex-start; /* Align items to the left for better readability */
+        gap: 0.5rem; /* Small gap between lot number and product */
+        width: 100%; /* Full width to ensure it fits the mobile screen */
+    }
+
+    .lot-product {
+        font-size: 0.9rem; /* Slightly reduce the font size */
+        display: flex;
+        justify-content: space-between; /* Keep product and icon aligned horizontally */
+        align-items: center;
+        width: 100%; /* Ensure the lot product takes up the full width */
+    }
+
+    .box-icon {
+        width: 2rem; /* Scale down the box icon for mobile */
+        height: 2rem;
+    }
+}
