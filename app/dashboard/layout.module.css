@@ -27,6 +27,8 @@
     overflow-y: visible; /* Enable vertical scrolling */
     height: 100vh; /* Full height for content */
     gap: 1rem; /* Space between elements */
+    min-width: 65rem;
+    margin-right: 7.5rem;
 }
 
 .header-layout {
