@@ -19,7 +19,7 @@ export const Orders = () => {
             <div className={styles['orders-container']}>
                 <div className={styles['order-container']}>
                     <div className={styles['order-details']}>
-                        <div className={styles['order-date']}>
+                        <div>
                             <div>Order placed</div>
                             <div>October 16, 2024</div>
                         </div>
@@ -32,26 +32,20 @@ export const Orders = () => {
                     <div className={styles['lots-container']}>
                         <div className={styles['lot-container']}>
                             <div className={styles['lot-details']}>
-                                <div>Lot #1829</div>
+                                <div className={styles['lot-font']}>Lot #1829</div>
                                 <div className={styles['lot-product']}>
                                     <div>Frozen Pork Meats: 800/800</div>
                                     <img className={styles['box-icon']} src="icons/box.svg" alt="box" />
                                 </div>
                             </div>
-                            <div>
-                                <Button className={styles['add-order-button']}>Dispatch</Button>
-                            </div>
                         </div>
                         <div className={styles['lot-container']}>
                             <div className={styles['lot-details']}>
-                                <div>Lot #1829</div>
+                                <div>Lot #1830</div>
                                 <div className={styles['lot-product']}>
                                     <div>Sweet Potato: 800/800</div>
                                     <img className={styles['box-icon']} src="icons/box.svg" alt="box" />
                                 </div>
-                            </div>
-                            <div>
-                                <Button className={styles['add-order-button']}>Dispatch</Button>
                             </div>
                         </div>
                     </div>
