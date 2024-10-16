@@ -31,12 +31,14 @@
     margin-right: 7.5rem;
 }
 
+
 .header-layout {
     height: 8.5rem; /* Fixed height for the header */
     flex-shrink: 0; /* Prevent header from shrinking */
 }
 
 .children-layout {
+    padding-top: 2rem; /* Padding for the child layout */
     flex-grow: 1; /* Let children grow to take up space */
 }
 
@@ -54,9 +56,12 @@
 
     .content-layout {
         grid-column: 1 / -1; /* Content takes full width on mobile */
-        width: 100%; /* Full width */
-        padding: 1rem 2rem;
+        width: auto; /* Set width to auto to prevent overflow */
+        max-width: 100%; /* Ensure it doesn't exceed screen width */
+        margin: 0 auto; /* Center content */
+        padding: 1rem 2rem; /* Adjust padding for mobile */
         height: auto; /* Adjust height for scrolling */
+        min-width: 23rem;
     }
 
     .header-layout {
