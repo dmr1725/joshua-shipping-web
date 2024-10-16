@@ -1,9 +1,14 @@
-import { Orders } from "../ui/dashboard/orders/orders";
+import OrdersWrapper from "../ui/dashboard/orders/wrapper";
+import { OrdersSkeleton } from "../ui/dashboard/orders/skeleton";
+import { Suspense } from "react";
+
 export default function Page() {
    
     return (
         <>
-            <Orders/>
+            <Suspense fallback={<OrdersSkeleton/>}>
+                <OrdersWrapper/>
+            </Suspense>
         </>
     );
   }
