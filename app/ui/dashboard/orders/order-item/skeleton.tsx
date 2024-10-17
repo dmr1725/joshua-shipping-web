@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './singular-order.module.css';
+import styles from './order-item.module.css';
 
-export const SingularOrderSkeleton = () => {
+export const OrderItemSkeleton = () => {
     const shimmer = `before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] 
     before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent relative overflow-hidden bg-gray-200`;
 

@@ -1,6 +1,6 @@
 import styles from './orders.module.css'; // Import your existing styles
 import { Button } from '../../button/button';
-import { SingularOrderSkeleton } from '../singluar-order/skeleton';
+import { OrderItemSkeleton } from './order-item/skeleton';
     
 export const OrdersSkeleton = () => {
     return (
@@ -18,11 +18,11 @@ export const OrdersSkeleton = () => {
                         <input className={styles['input-search']} type="text" id="search_orders" name="search_orders" placeholder="Search your orders..."/>
                     </div>
                 </div>
-                <div className={styles['orders-container']}>
-                    <SingularOrderSkeleton/>
-                    <SingularOrderSkeleton/>
-                    <SingularOrderSkeleton/>
-                    <SingularOrderSkeleton/>
+                <div className="flex flex-col pt-[3rem] gap-[1rem]">
+                    <OrderItemSkeleton/>
+                    <OrderItemSkeleton/>
+                    <OrderItemSkeleton/>
+                    <OrderItemSkeleton/>
                 </div>
             </div>
         </>

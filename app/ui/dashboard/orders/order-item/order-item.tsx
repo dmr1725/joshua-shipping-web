@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './singular-order.module.css'
+import styles from './order-item.module.css'
 import { OrderInterface } from '@/app/lib/data'
 
-export const SingluarOrder: React.FC<OrderInterface> = ({id, bl, container_no, date, lots}) => {
+export const OrderItem: React.FC<OrderInterface> = ({id, bl, container_no, date, lots}) => {
     return (
         <div className={styles['order-container']}>
             <div className={styles['order-details']}>
