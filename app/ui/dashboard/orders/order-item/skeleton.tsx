@@ -26,21 +26,25 @@ export const OrderItemSkeleton = () => {
                 </div>
             </div>
 
-            <div className={styles['lots-container']}>
-                <div className={`${styles['lot-container']} ${shimmer}`}>
-                    <div className={styles['lot-details']}>
+            {/* lots container */}
+            <div>
+                {/* lot container */}
+                <div className={`${shimmer}`}>
+                    {/* lot details */}
+                    <div>
                         <div className={`${shimmer}`} style={{ width: '60px', height: '20px', marginBottom: '10px' }}></div>
-                        <div className={styles['lot-product']}>
+                        {/* lot product */}
+                        <div>
                             <div className={`${shimmer}`} style={{ width: '200px', height: '20px' }}></div>
                             <div className={`${shimmer}`} style={{ width: '30px', height: '30px' }}></div>
                         </div>
                     </div>
                 </div>
 
-                <div className={`${styles['lot-container']} ${shimmer}`}>
-                    <div className={styles['lot-details']}>
+                <div className={`${shimmer}`}>
+                    <div>
                         <div className={`${shimmer}`} style={{ width: '60px', height: '20px', marginBottom: '10px' }}></div>
-                        <div className={styles['lot-product']}>
+                        <div>
                             <div className={`${shimmer}`} style={{ width: '200px', height: '20px' }}></div>
                             <div className={`${shimmer}`} style={{ width: '30px', height: '30px' }}></div>
                         </div>
