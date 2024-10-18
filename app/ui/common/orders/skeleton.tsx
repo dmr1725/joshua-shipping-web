@@ -14,7 +14,7 @@ export const OrdersSkeleton = () => {
                         <Button className={styles['add-order-button']}>Add Order +</Button>
                     </div>
                     <div className={styles['search-container']}>
-                        <img className={styles['search-icon']} src='icons/search.svg' alt='search photo' />
+                        <img className={styles['search-icon']} src='/icons/search.svg' alt='search photo' />
                         <input className={styles['input-search']} type="text" id="search_orders" name="search_orders" placeholder="Search your orders..."/>
                     </div>
                 </div>

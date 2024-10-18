@@ -60,7 +60,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders }) => {
                     <Button className={styles['add-order-button']}>Add Order +</Button>
                 </div>
                 <div className={styles['search-container']}>
-                    <img className={styles['search-icon']} src='icons/search.svg' alt='search icon' />
+                    <img className={styles['search-icon']} src='/icons/search.svg' alt='search icon' />
                     <input
                         className={styles['input-search']}
                         type="text"

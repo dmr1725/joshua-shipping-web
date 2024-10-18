@@ -54,26 +54,26 @@ export const SideBar = () => {
                 </div>
                 <div className={styles['sidebar-options']}>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/dashboard.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/dashboard.svg" alt="container"/>
                         <div>Profile</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/container2.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/container2.svg" alt="container"/>
                         <div>Orders</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/invoice.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/invoice.svg" alt="container"/>
                         <div>Invoices</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/truck2.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/truck2.svg" alt="container"/>
                         <div>Dispatches</div>
                     </div>
                 </div>
             </div>
             <div className={styles['logout-section']}>
                 <div className={styles['icon-info']}>
-                    <img className={styles['icon']} src="icons/logout.svg" alt="container"/>
+                    <img className={styles['icon']} src="/icons/logout.svg" alt="container"/>
                     <div>Log Out</div>
                 </div>
             </div>
@@ -82,23 +82,23 @@ export const SideBar = () => {
             {menuOpen && (
                 <div className={styles['dropdown-menu']} ref={dropdownRef}>
                     <div className={styles['icon-info']}>
-                            <img className={styles['icon']} src="icons/dashboard.svg" alt="container"/>
+                            <img className={styles['icon']} src="/icons/dashboard.svg" alt="container"/>
                             <div>Profile</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/container2.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/container2.svg" alt="container"/>
                         <div>Orders</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/invoice.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/invoice.svg" alt="container"/>
                         <div>Invoices</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/truck2.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/truck2.svg" alt="container"/>
                         <div>Dispatches</div>
                     </div>
                     <div className={styles['icon-info']}>
-                        <img className={styles['icon']} src="icons/logout.svg" alt="container"/>
+                        <img className={styles['icon']} src="/icons/logout.svg" alt="container"/>
                         <div>Log Out</div>
                     </div>
                 </div>
