@@ -18,7 +18,7 @@ export const OrdersSkeleton = () => {
                         <input className={styles['input-search']} type="text" id="search_orders" name="search_orders" placeholder="Search your orders..."/>
                     </div>
                 </div>
-                <div className="flex flex-col pt-[3rem] gap-[1rem]">
+                <div className="flex flex-col pt-[3rem] gap-[2rem]">
                     <OrderItemSkeleton/>
                     <OrderItemSkeleton/>
                     <OrderItemSkeleton/>
