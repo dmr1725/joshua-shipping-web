@@ -24,9 +24,8 @@ const orders: OrderInterface[] = [
         {
           id: "1829",
           product: "Frozen Pork Meats",
-          dispatched_boxes: 300
-        //   current_boxes: 800,
-        //   starting_boxes: 800,
+          current_boxes: 800,
+          starting_boxes: 800,
         },
         {
           id: "1830",
