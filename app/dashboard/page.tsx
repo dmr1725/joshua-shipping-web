@@ -1,12 +1,12 @@
-import OrdersWrapper from "../ui/common/orders/wrapper";
+import InventoryOrders from "../ui/client/inventory-orders";
 import { OrdersSkeleton } from "../ui/common/orders/skeleton";
 import { Suspense } from "react";
 
 export default function Page() {
   return (
     <>
-      <Suspense fallback={<OrdersSkeleton />}>
-        <OrdersWrapper />
+      <Suspense fallback={<OrdersSkeleton/>}>
+        <InventoryOrders />
       </Suspense>
     </>
   );

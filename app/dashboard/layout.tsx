@@ -1,4 +1,4 @@
-import { SideBar } from "@/app/ui/dashboard/sidebar/sidebar";
+import { SideBar } from "@/app/ui/common/sidebar/sidebar";
 import DashboardHeaderWrapper from "../ui/common/header/wrapper";
 import { DashboardHeaderSkeleton } from "../ui/common/header/skeleton";
 import { Suspense } from "react";
