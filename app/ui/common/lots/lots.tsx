@@ -15,7 +15,7 @@ export const Lots: React.FC<LotsProps> = ({lots}) => {
                         <div className={styles['lot-font']}>Lot #{lot.id}</div>
                         <div className={styles['lot-product']}>
                             <div>{lot.product}: {lot.dispatched_boxes ? lot.dispatched_boxes : `${lot.current_boxes}/${lot.starting_boxes}`}</div>
-                            <img className={styles['box-icon']} src="icons/box.svg" alt="box" />
+                            <img className={styles['box-icon']} src="/icons/box.svg" alt="box" />
                         </div>
                     </div>
                 </div>

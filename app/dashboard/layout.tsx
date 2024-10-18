@@ -1,4 +1,4 @@
-import { SideBar } from "@/app/ui/common/sidebar/sidebar";
+import ClientSidebar from "../ui/client/client-sidebar";
 import DashboardHeaderWrapper from "../ui/common/header/wrapper";
 import { DashboardHeaderSkeleton } from "../ui/common/header/skeleton";
 import { Suspense } from "react";
@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles["dashboard-layout"]}>
       <div className={styles["sidebar-layout"]}>
-        <SideBar />
+        <ClientSidebar />
       </div>
       <div className={styles["content-layout"]}>
         <div className={styles["header-layout"]}>
