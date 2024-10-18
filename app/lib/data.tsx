@@ -1,8 +1,9 @@
-interface Lot {
+export interface LotInterface {
     id: string;
     product: string;
-    current_boxes: number;
-    starting_boxes: number;
+    current_boxes?: number;
+    starting_boxes?: number;
+    dispatched_boxes?: number;
 }
 
 export interface OrderInterface {
@@ -10,7 +11,7 @@ export interface OrderInterface {
     bl?: string;
     container_no?: string;
     date: string;
-    lots: Lot[]
+    lots: LotInterface[]
 }
 
 const orders: OrderInterface[] = [
@@ -23,8 +24,9 @@ const orders: OrderInterface[] = [
         {
           id: "1829",
           product: "Frozen Pork Meats",
-          current_boxes: 800,
-          starting_boxes: 800,
+          dispatched_boxes: 300
+        //   current_boxes: 800,
+        //   starting_boxes: 800,
         },
         {
           id: "1830",
