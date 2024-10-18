@@ -11,10 +11,13 @@ interface OrdersProps {
 
 export const Orders: React.FC<OrdersProps> = ({ orders }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const ordersPerPage = 5;
 
     // Handle search input change
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value.toLowerCase());
+        setCurrentPage(1); // Reset to page 1 when search changes
     };
 
     // Filter the orders based on search input
@@ -23,7 +26,6 @@ export const Orders: React.FC<OrdersProps> = ({ orders }) => {
         const matchContainerNo = order.container_no.toLowerCase().includes(searchTerm);
         const matchBl = order.bl.toLowerCase().includes(searchTerm);
 
-        // Check if any lot matches the search term (id or product name)
         const matchLots = order.lots.some(lot =>
             lot.id.toLowerCase().includes(searchTerm) ||
             lot.product.toLowerCase().includes(searchTerm)
@@ -31,6 +33,22 @@ export const Orders: React.FC<OrdersProps> = ({ orders }) => {
 
         return matchOrderId || matchContainerNo || matchBl || matchLots;
     });
+
+    // Get current orders for pagination
+    const indexOfLastOrder = currentPage * ordersPerPage;
+    const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
+    const currentOrders = filteredOrders.slice(indexOfFirstOrder, indexOfLastOrder);
+
+    // Pagination logic
+    const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
+
+    const goToNextPage = () => {
+        if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+    };
+
+    const goToPrevPage = () => {
+        if (currentPage > 1) setCurrentPage(currentPage - 1);
+    };
 
     return (
         <div className={styles['orders-layout']}>
@@ -50,11 +68,43 @@ export const Orders: React.FC<OrdersProps> = ({ orders }) => {
                         name="search_orders"
                         placeholder="Search your orders..."
                         value={searchTerm}
-                        onChange={handleSearchChange} // Update the state when input changes
+                        onChange={handleSearchChange}
                     />
                 </div>
             </div>
-            <OrderList orders={filteredOrders} />
+            <OrderList orders={currentOrders} />
+            <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                goToNextPage={goToNextPage}
+                goToPrevPage={goToPrevPage}
+            />
         </div>
+    );
+};
+
+// Pagination component
+interface PaginationProps {
+    currentPage: number;
+    totalPages: number;
+    goToNextPage: () => void;
+    goToPrevPage: () => void;
+}
+
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, goToNextPage, goToPrevPage }) => {
+    return (
+        <nav className={styles['pagination-nav']}>
+            <ul className={styles['pagination']}>
+                <li className={`${styles['page-item']} ${currentPage === 1 ? styles['disabled'] : ''}`} onClick={goToPrevPage}>
+                    Prev
+                </li>
+                <li className={styles['page-number']}>
+                    {currentPage} of {totalPages}
+                </li>
+                <li className={`${styles['page-item']} ${currentPage === totalPages ? styles['disabled'] : ''}`} onClick={goToNextPage}>
+                    Next
+                </li>
+            </ul>
+        </nav>
     );
 };
