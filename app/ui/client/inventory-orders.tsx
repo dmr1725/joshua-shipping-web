@@ -5,8 +5,9 @@ export default async function InventoryOrders() {
     const orders = await fetchAllOrders();
 
     return (
-        <>
-            <Orders orders={orders}/>
-        </>
-    )
+        <Orders 
+            orders={orders} 
+            orderType="inventory"  // Pass the order type as 'inventory'
+        />
+    );
 }
