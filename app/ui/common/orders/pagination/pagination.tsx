@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { OrderInterface } from '@/app/lib/data';
 import styles from './pagination.module.css';
 
 // Pagination component
 interface PaginationProps {
-    data: any[];
+    data: OrderInterface[];
     itemsPerPage: number;
     onPageChange: (currentData: any[]) => void;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { OrderItem } from "../order-item/order-item";
 import { OrderInterface } from '@/app/lib/data';
-import { useRouter } from 'next/router';
 import styles from './order-list.module.css'
 
 interface OrdersProps {
