@@ -54,7 +54,9 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
 
   return (
     <div className={styles["orders-layout"]}>
-      <div className={styles["orders-header-font"]}>Your Orders</div>
+      <div className={styles["orders-header-font"]}>{`${
+            orderType == "inventory" ? "Containers" : "Dispatches"
+          }`}</div>
       <div className={styles["actions-container"]}>
         <div>
           <Button className={styles["add-order-button"]}>{`${
