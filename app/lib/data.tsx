@@ -8,13 +8,26 @@ export interface LotInterface {
 
 export interface OrderInterface {
     id: string;
-    bl?: string;
-    container_no?: string;
-    date: string;
-    lots: LotInterface[]
+    lots: LotInterface[];
 }
 
-const orders: OrderInterface[] = [
+// Interface for inventory orders
+export interface InventoryOrderInterface extends OrderInterface {
+    container_no?: string;
+    bl?: string;
+    date: string;
+    status?: string;
+}
+
+// Interface for dispatch orders
+export interface DispatchOrderInterface extends OrderInterface {
+    driver: string;
+    date: string;
+    pickup_time: string;
+    status?: string;
+}
+
+const inventoryOrders: InventoryOrderInterface[] = [
     {
       id: "114-4893-859",
       bl: "CWPS4M097234",
@@ -186,6 +199,189 @@ const orders: OrderInterface[] = [
       ],
     },
 ];
+
+const dispatchedOrders: DispatchOrderInterface[] = [
+    {
+        id: "114-4893-859",
+        driver: "Juan Martinez",
+        date: "2024-10-16",
+        pickup_time: "1:00pm",
+        lots: [
+          {
+            id: "1829",
+            product: "Frozen Pork Meats",
+            dispatched_boxes: 300,
+          },
+          {
+            id: "1830",
+            product: "Sweet Potato",
+            dispatched_boxes: 250,
+          },
+        ],
+    },
+    {
+        id: "115-5234-960",
+        driver: "Maria Lopez",
+        date: "2024-10-17",
+        pickup_time: "10:30am",
+        lots: [
+          {
+            id: "1831",
+            product: "Chilled Beef",
+            dispatched_boxes: 450,
+          },
+          {
+            id: "1832",
+            product: "Frozen Fish Fillets",
+            dispatched_boxes: 500,
+          },
+        ],
+    },
+    {
+        id: "116-8745-721",
+        driver: "Pedro Gonzales",
+        date: "2024-10-18",
+        pickup_time: "8:15am",
+        lots: [
+          {
+            id: "1833",
+            product: "Corn",
+            dispatched_boxes: 850,
+          },
+          {
+            id: "1834",
+            product: "Soybeans",
+            dispatched_boxes: 1200,
+          },
+        ],
+    },
+    {
+        id: "117-6394-832",
+        driver: "Lucia Fernandez",
+        date: "2024-10-18",
+        pickup_time: "2:45pm",
+        lots: [
+          {
+            id: "1835",
+            product: "Frozen Chicken",
+            dispatched_boxes: 1000,
+          },
+          {
+            id: "1836",
+            product: "Apples",
+            dispatched_boxes: 500,
+          },
+        ],
+    },
+    {
+        id: "118-7594-923",
+        driver: "Carlos Ramirez",
+        date: "2024-10-19",
+        pickup_time: "4:30pm",
+        lots: [
+          {
+            id: "1837",
+            product: "Frozen Vegetables",
+            dispatched_boxes: 350,
+          },
+          {
+            id: "1838",
+            product: "Oranges",
+            dispatched_boxes: 700,
+          },
+        ],
+    },
+    {
+        id: "119-9423-512",
+        driver: "Ana Morales",
+        date: "2024-10-19",
+        pickup_time: "9:00am",
+        lots: [
+          {
+            id: "1839",
+            product: "Lettuce",
+            dispatched_boxes: 850,
+          },
+          {
+            id: "1840",
+            product: "Tomatoes",
+            dispatched_boxes: 600,
+          },
+        ],
+    },
+    {
+        id: "120-2748-623",
+        driver: "Ricardo Martinez",
+        date: "2024-10-20",
+        pickup_time: "3:00pm",
+        lots: [
+          {
+            id: "1841",
+            product: "Carrots",
+            dispatched_boxes: 900,
+          },
+          {
+            id: "1842",
+            product: "Bananas",
+            dispatched_boxes: 800,
+          },
+        ],
+    },
+    {
+        id: "121-9483-734",
+        driver: "Sofia Reyes",
+        date: "2024-10-20",
+        pickup_time: "11:00am",
+        lots: [
+          {
+            id: "1843",
+            product: "Frozen Shrimp",
+            dispatched_boxes: 550,
+          },
+          {
+            id: "1844",
+            product: "Green Beans",
+            dispatched_boxes: 450,
+          },
+        ],
+    },
+    {
+        id: "122-5294-845",
+        driver: "Jorge Sanchez",
+        date: "2024-10-21",
+        pickup_time: "6:45am",
+        lots: [
+          {
+            id: "1845",
+            product: "Frozen Peas",
+            dispatched_boxes: 700,
+          },
+          {
+            id: "1846",
+            product: "Pineapples",
+            dispatched_boxes: 250,
+          },
+        ],
+    },
+    {
+        id: "123-1385-956",
+        driver: "Laura Perez",
+        date: "2024-10-21",
+        pickup_time: "7:30pm",
+        lots: [
+          {
+            id: "1847",
+            product: "Frozen Blueberries",
+            dispatched_boxes: 400,
+          },
+          {
+            id: "1848",
+            product: "Frozen Strawberries",
+            dispatched_boxes: 550,
+          },
+        ],
+    },
+];
   
 
 export const fetchCompanyName = async (): Promise<string> => {
@@ -196,10 +392,18 @@ export const fetchCompanyName = async (): Promise<string> => {
     });
 };
 
-export const fetchAllOrders = async (): Promise<OrderInterface[]> => {
+export const fetchAllInventoryOrders = async (): Promise<InventoryOrderInterface[]> => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(orders);
+            resolve(inventoryOrders);
+        }, 5000); // 5 seconds delay
+    });
+}
+
+export const fetchAllDispatchedOrders = async (): Promise<DispatchOrderInterface[]> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(dispatchedOrders);
         }, 5000); // 5 seconds delay
     });
 }
