@@ -3,7 +3,7 @@ import Link from "next/link";
 import { OrderInterface } from "@/app/lib/data";
 import styles from "./orders.module.css";  // Ensure the correct path to styles
 
-// Function to render details for Inventory Orders
+// Function to render details for Inventory Order
 export const renderInventoryOrderDetails = (order: OrderInterface, orderLink: string): JSX.Element => (
   <>
     <div>
@@ -27,7 +27,7 @@ export const renderInventoryOrderDetails = (order: OrderInterface, orderLink: st
   </>
 );
 
-// Function to render details for Dispatch Orders
+// Function to render details for Dispatch Order
 export const renderDispatchOrderDetails = (order: OrderInterface, orderLink: string): JSX.Element => (
   <>
     <div>

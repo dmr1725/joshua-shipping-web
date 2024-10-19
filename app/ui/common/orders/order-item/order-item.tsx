@@ -14,7 +14,7 @@ export const OrderItem: React.FC<OrderItemProps> = ({ order, renderDetails, orde
   return (
     <div className={styles["order-container"]}>
       <div className={styles["order-details"]}>
-        {renderDetails(order, orderLink)}
+        {renderDetails(order, orderLink)} {/* Render order details */}
       </div>
       <Lots lots={order.lots} />
     </div>
