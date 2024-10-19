@@ -1,13 +1,14 @@
-import InventoryOrders from "@/app/ui/client/inventory-orders";
-import { OrdersSkeleton } from "@/app/ui/common/orders/skeleton";
-import { Suspense } from "react";
+'use client';
+import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
 
 export default function Page() {
-  return (
-    <>
-      <Suspense fallback={<OrdersSkeleton/>}>
-        <InventoryOrders />
-      </Suspense>
-    </>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to dashboard/containers
+    router.push('/dashboard/containers');
+  }, [router]);
+
+  return null;  // No need to return anything since the page redirects immediately
 }
