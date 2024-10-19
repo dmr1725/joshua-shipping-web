@@ -1,8 +1,8 @@
-import { fetchAllInventoryOrders } from "@/app/lib/data";
+import { fetchAllContainerOrders } from "@/app/lib/data";
 import { Orders } from "@/app/ui/common/orders/orders";
 
 export default async function InventoryOrders() {
-    const orders = await fetchAllInventoryOrders();
+    const orders = await fetchAllContainerOrders();
 
     return (
         <Orders 

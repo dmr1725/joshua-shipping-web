@@ -1,10 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { InventoryOrderInterface, DispatchOrderInterface } from "@/app/lib/data";
-import styles from "@/app/ui/common/orders/orders.module.css";  // Ensure the correct path to styles
+import {
+  ContainerOrderInterface,
+  DispatchOrderInterface,
+} from "@/app/lib/data";
+import styles from "@/app/ui/common/orders/orders.module.css"; // Ensure the correct path to styles
 
 // Function to render details for Inventory Order
-export const renderInventoryOrderDetails = (order: InventoryOrderInterface, orderLink: string): JSX.Element => (
+export const renderInventoryOrderDetails = (
+  order: ContainerOrderInterface,
+  orderLink: string
+): JSX.Element => (
   <>
     <div>
       <div>Order placed</div>
@@ -20,7 +26,7 @@ export const renderInventoryOrderDetails = (order: InventoryOrderInterface, orde
     </div>
     <div>
       <div>Inventory Order #{order.id}</div>
-      <Link href={orderLink} className={styles['order-link']}>
+      <Link href={orderLink} className={styles["order-link"]}>
         View order details
       </Link>
     </div>
@@ -28,7 +34,10 @@ export const renderInventoryOrderDetails = (order: InventoryOrderInterface, orde
 );
 
 // Function to render details for Dispatch Order
-export const renderDispatchOrderDetails = (order: DispatchOrderInterface, orderLink: string): JSX.Element => (
+export const renderDispatchOrderDetails = (
+  order: DispatchOrderInterface,
+  orderLink: string
+): JSX.Element => (
   <>
     <div>
       <div>Dispatch Date</div>
@@ -44,7 +53,7 @@ export const renderDispatchOrderDetails = (order: DispatchOrderInterface, orderL
     </div>
     <div>
       <div>Dispatch Order #{order.id}</div>
-      <Link href={orderLink} className={styles['order-link']}>
+      <Link href={orderLink} className={styles["order-link"]}>
         View dispatch details
       </Link>
     </div>
