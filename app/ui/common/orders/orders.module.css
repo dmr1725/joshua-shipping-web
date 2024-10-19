@@ -56,6 +56,15 @@
     align-items: center;
 }
 
+.order-link {
+    cursor: pointer; /* Cursor turns into a pointer */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+  
+.order-link:hover {
+    color: #FF834C; /* Change color on hover */
+}
+
 .page-item {
     margin: 0 0.5rem;
     padding: 0.5rem 1rem;
