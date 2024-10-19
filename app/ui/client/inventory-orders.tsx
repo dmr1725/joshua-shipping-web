@@ -7,7 +7,7 @@ export default async function InventoryOrders() {
     return (
         <Orders 
             orders={orders} 
-            orderType="inventory"  // Pass the order type as 'inventory'
+            orderType="containers"
         />
     );
 }

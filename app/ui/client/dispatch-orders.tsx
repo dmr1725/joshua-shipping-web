@@ -7,7 +7,7 @@ export default async function DispatchOrders() {
     return (
         <Orders 
             orders={orders} 
-            orderType="dispatch"  // Pass the order type as 'inventory'
+            orderType="dispatches"
         />
     );
 }

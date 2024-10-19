@@ -12,7 +12,7 @@ import {
   filterDispatchOrders,
 } from "./utils/search-filter";
 import {
-  renderInventoryOrderDetails,
+  renderContainerOrderDetails,
   renderDispatchOrderDetails,
 } from "./utils/order-render-details";
 import { OrderList } from "./order-list/order-list";
@@ -20,7 +20,7 @@ import { Pagination } from "./pagination/pagination";
 
 interface OrdersProps {
   orders: OrderInterface[];
-  orderType: "inventory" | "dispatch"; // New prop to specify the type of order
+  orderType: "containers" | "dispatches"; // New prop to specify the type of order
 }
 
 export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
@@ -34,15 +34,15 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
 
   // Use appropriate filter based on orderType
   const filteredOrders =
-    orderType === "inventory"
+    orderType === "containers"
       ? filterContainerOrders(orders, searchTerm)
       : filterDispatchOrders(orders, searchTerm);
 
   // Choose the appropriate render function based on the order type
   const renderDetails =
-    orderType === "inventory"
+    orderType === "containers"
       ? (order: OrderInterface, orderLink: string) =>
-          renderInventoryOrderDetails(
+          renderContainerOrderDetails(
             order as ContainerOrderInterface,
             orderLink
           )
@@ -55,12 +55,12 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
   return (
     <div className={styles["orders-layout"]}>
       <div className={styles["orders-header-font"]}>{`${
-        orderType == "inventory" ? "Containers" : "Dispatches"
+        orderType == "containers" ? "Containers" : "Dispatches"
       }`}</div>
       <div className={styles["actions-container"]}>
         <div>
           <Button className={styles["add-order-button"]}>{`${
-            orderType == "inventory" ? "Add Container +" : "Add Dispatch +"
+            orderType == "containers" ? "Add Container +" : "Add Dispatch +"
           }`}</Button>
         </div>
         <div className={styles["search-container"]}>

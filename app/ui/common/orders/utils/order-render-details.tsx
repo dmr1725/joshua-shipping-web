@@ -6,7 +6,7 @@ import {
 import styles from "@/app/ui/common/orders/orders.module.css"; // Ensure the correct path to styles
 
 // Function to render details for Inventory Order
-export const renderInventoryOrderDetails = (
+export const renderContainerOrderDetails = (
   order: ContainerOrderInterface,
   orderLink: string
 ): JSX.Element => (
@@ -24,7 +24,7 @@ export const renderInventoryOrderDetails = (
       <div>{order.container_no}</div>
     </div>
     <div>
-      <div>Inventory Order #{order.id}</div>
+      <div>Container Order #{order.id}</div>
       <a href={orderLink} className={styles["order-link"]}>
         View order details
       </a>
