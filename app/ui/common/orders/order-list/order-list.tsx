@@ -7,13 +7,14 @@ interface OrdersProps {
     orders: OrderInterface[];
     renderDetails: (order: OrderInterface, orderLink: string) => JSX.Element;  // Pass renderDetails
     orderType: string;
+    rootRoute: string;
 }
 
-export const OrderList: React.FC<OrdersProps> = ({ orders, renderDetails, orderType }) => {
+export const OrderList: React.FC<OrdersProps> = ({ orders, renderDetails, orderType, rootRoute }) => {
     return (
         <div className={styles['orders-container']}>
             {orders.map((order) => {
-                const orderLink = `/dashboard/${orderType}/${order.id}`; // Generate order link (adjust for dispatch if needed)
+                const orderLink = `/${rootRoute}/${orderType}/${order.id}`; // Generate order link (adjust for dispatch if needed)
 
                 return (
                     <OrderItem 

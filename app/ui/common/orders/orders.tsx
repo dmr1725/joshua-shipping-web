@@ -84,6 +84,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
         orders={currentOrders} // Only pass the current orders being displayed
         renderDetails={renderDetails} // Pass renderDetails function
         orderType={orderType}
+        rootRoute="dashboard"
       />
       <Pagination
         data={filteredOrders} // Pass filtered orders
