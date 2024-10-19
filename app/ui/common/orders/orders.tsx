@@ -4,42 +4,38 @@ import styles from './orders.module.css';
 import { Button } from '../../button/button';
 import { OrderInterface } from '@/app/lib/data';
 import { OrderList } from './order-list/order-list';
+import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './order-render-details';  // Import the functions
 
 interface OrdersProps {
     orders: OrderInterface[];
+    orderType: 'inventory' | 'dispatch';  // New prop to specify the type of order
 }
 
-export const Orders: React.FC<OrdersProps> = ({ orders }) => {
+export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const ordersPerPage = 5;
 
-    // Handle search input change
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value.toLowerCase());
-        setCurrentPage(1); // Reset to page 1 when search changes
+        setCurrentPage(1);
     };
 
-    // Filter the orders based on search input
     const filteredOrders = orders.filter(order => {
         const matchOrderId = order.id.toLowerCase().includes(searchTerm);
         const matchContainerNo = order.container_no.toLowerCase().includes(searchTerm);
         const matchBl = order.bl.toLowerCase().includes(searchTerm);
-
         const matchLots = order.lots.some(lot =>
             lot.id.toLowerCase().includes(searchTerm) ||
             lot.product.toLowerCase().includes(searchTerm)
         );
-
         return matchOrderId || matchContainerNo || matchBl || matchLots;
     });
 
-    // Get current orders for pagination
     const indexOfLastOrder = currentPage * ordersPerPage;
     const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
     const currentOrders = filteredOrders.slice(indexOfFirstOrder, indexOfLastOrder);
 
-    // Pagination logic
     const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
     const goToNextPage = () => {
@@ -49,6 +45,11 @@ export const Orders: React.FC<OrdersProps> = ({ orders }) => {
     const goToPrevPage = () => {
         if (currentPage > 1) setCurrentPage(currentPage - 1);
     };
+
+    // Choose the appropriate render function based on the order type
+    const renderDetails = orderType === 'inventory'
+        ? renderInventoryOrderDetails
+        : renderDispatchOrderDetails;
 
     return (
         <div className={styles['orders-layout']}>
@@ -72,7 +73,10 @@ export const Orders: React.FC<OrdersProps> = ({ orders }) => {
                     />
                 </div>
             </div>
-            <OrderList orders={currentOrders} />
+            <OrderList 
+                orders={currentOrders} 
+                renderDetails={renderDetails}  // Pass renderDetails function
+            />
             <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}
