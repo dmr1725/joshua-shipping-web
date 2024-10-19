@@ -1,37 +1,22 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./order-item.module.css";
 import { OrderInterface } from "@/app/lib/data";
 import { Lots } from "@/app/ui/common/lots/lots";
 
-export const OrderItem: React.FC<OrderInterface> = ({
-  id,
-  bl,
-  container_no,
-  date,
-  lots,
-}) => {
+interface OrderItemProps {
+  order: OrderInterface;
+  renderDetails: (order: OrderInterface, orderLink: string) => JSX.Element;
+  orderLink: string;  // Add orderLink to the props
+}
+
+export const OrderItem: React.FC<OrderItemProps> = ({ order, renderDetails, orderLink }) => {
   return (
     <div className={styles["order-container"]}>
       <div className={styles["order-details"]}>
-        <div>
-          <div>Order placed</div>
-          <div>{date}</div>
-        </div>
-        <div>
-          <div>Bill of Lading</div>
-          <div>{bl}</div>
-        </div>
-        <div>
-          <div>Container #</div>
-          <div>{container_no}</div>
-        </div>
-        <div>
-          <div>Order #{id}</div>
-          <div>View order details</div>
-        </div>
+        {renderDetails(order, orderLink)}
       </div>
-
-      <Lots lots={lots} />
+      <Lots lots={order.lots} />
     </div>
   );
 };
