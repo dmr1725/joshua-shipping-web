@@ -26,17 +26,50 @@ interface OrdersProps {
 export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]); // State to track current orders displayed per page
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
+  const [selectedStatus, setSelectedStatus] = useState<string | null>(null); // State for selected status
   const ordersPerPage = 5;
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  // Use appropriate filter based on orderType
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown visibility
+  };
+
+  const handleStatusSelect = (status: string) => {
+    setSelectedStatus(status); // Set the selected status
+    setIsDropdownOpen(false); // Close dropdown after selection
+  };
+
+  const clearFilter = () => {
+    setSelectedStatus(null); // Reset status filter
+    setIsDropdownOpen(false); // Close dropdown
+  };
+
+  // Use appropriate filter based on orderType and selected status
   const filteredOrders =
     orderType === "containers"
-      ? filterContainerOrders(orders, searchTerm)
-      : filterDispatchOrders(orders, searchTerm);
+        ? filterContainerOrders(orders, searchTerm).filter((order) => {
+            // Normalize status
+            const normalizedStatus =
+            order.status === "At Warehouse" || order.status === "Confirmed Inventory"
+                ? "At Warehouse"
+                : "Pending";
+
+            // Apply status filtering if selectedStatus is set
+            return selectedStatus ? normalizedStatus === selectedStatus : true;
+        })
+        : filterDispatchOrders(orders, searchTerm).filter((order) => {
+            // Same logic for dispatch orders if needed
+            const normalizedStatus =
+            order.status === "At Warehouse" || order.status === "Confirmed Inventory"
+                ? "At Warehouse"
+                : "Pending";
+
+            return selectedStatus ? normalizedStatus === selectedStatus : true;
+        });
 
   // Choose the appropriate render function based on the order type
   const renderDetails =
@@ -52,16 +85,50 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
             orderLink
           );
 
+  const statusOptions = ["Pending", "At Warehouse"];
+
   return (
     <div className={styles["orders-layout"]}>
       <div className={styles["orders-header-font"]}>{`${
         orderType == "containers" ? "Containers" : "Dispatches"
       }`}</div>
       <div className={styles["actions-container"]}>
-        <div>
-          <Button className={styles["add-order-button"]}>{`${
-            orderType == "containers" ? "Add Container +" : "Add Dispatch +"
-          }`}</Button>
+        <div className={styles["buttons-layout"]}>
+          <div className={styles["dropdown-container"]}>
+            <Button
+              className={styles["status-button"]}
+              onClick={toggleDropdown}
+            >
+              <div>{selectedStatus ? selectedStatus : "Filter By Status"}</div>
+              <img src="/icons/polygon.svg" alt="polygon" />
+            </Button>
+            {isDropdownOpen && (
+              <div className={styles["dropdown-menu"]}>
+                {statusOptions.map((status) => (
+                  <div
+                    key={status}
+                    className={styles["dropdown-item"]}
+                    onClick={() => handleStatusSelect(status)}
+                  >
+                    {status}
+                  </div>
+                ))}
+                {/* Add an option to clear the filter */}
+                <div
+                  className={styles["dropdown-item"]}
+                  onClick={clearFilter}
+                  style={{ fontWeight: "bold", color: "#FF6347" }} // Style for "Clear Filter"
+                >
+                  Clear Filter
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            <Button className={styles["add-order-button"]}>{`${
+              orderType == "containers" ? "Add Container +" : "Add Dispatch +"
+            }`}</Button>
+          </div>
         </div>
         <div className={styles["search-container"]}>
           <img
