@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { OrderInterface } from "@/app/lib/data";
+import { InventoryOrderInterface, DispatchOrderInterface } from "@/app/lib/data";
 import styles from "@/app/ui/common/orders/orders.module.css";  // Ensure the correct path to styles
 
 // Function to render details for Inventory Order
-export const renderInventoryOrderDetails = (order: OrderInterface, orderLink: string): JSX.Element => (
+export const renderInventoryOrderDetails = (order: InventoryOrderInterface, orderLink: string): JSX.Element => (
   <>
     <div>
       <div>Order placed</div>
@@ -19,7 +19,7 @@ export const renderInventoryOrderDetails = (order: OrderInterface, orderLink: st
       <div>{order.container_no}</div>
     </div>
     <div>
-      <div>Order #{order.id}</div>
+      <div>Inventory Order #{order.id}</div>
       <Link href={orderLink} className={styles['order-link']}>
         View order details
       </Link>
@@ -28,16 +28,24 @@ export const renderInventoryOrderDetails = (order: OrderInterface, orderLink: st
 );
 
 // Function to render details for Dispatch Order
-export const renderDispatchOrderDetails = (order: OrderInterface, orderLink: string): JSX.Element => (
+export const renderDispatchOrderDetails = (order: DispatchOrderInterface, orderLink: string): JSX.Element => (
   <>
     <div>
-      <div>Dispatched Date</div>
+      <div>Dispatch Date</div>
       <div>{order.date}</div>
     </div>
     <div>
-      <div>Order #{order.id}</div>
+      <div>Pick up time</div>
+      <div>{order.pickup_time}</div>
+    </div>
+    <div>
+      <div>Driver</div>
+      <div>{order.driver}</div>
+    </div>
+    <div>
+      <div>Dispatch Order #{order.id}</div>
       <Link href={orderLink} className={styles['order-link']}>
-        Track dispatch
+        View dispatch details
       </Link>
     </div>
   </>

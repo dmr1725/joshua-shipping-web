@@ -8,6 +8,7 @@ export interface LotInterface {
 
 export interface OrderInterface {
     id: string;
+    date:string;
     lots: LotInterface[];
 }
 
@@ -15,14 +16,12 @@ export interface OrderInterface {
 export interface InventoryOrderInterface extends OrderInterface {
     container_no?: string;
     bl?: string;
-    date: string;
     status?: string;
 }
 
 // Interface for dispatch orders
 export interface DispatchOrderInterface extends OrderInterface {
     driver: string;
-    date: string;
     pickup_time: string;
     status?: string;
 }

@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import styles from './orders.module.css';
 import { Button } from '../../button/button';
-import { OrderInterface } from '@/app/lib/data';
-import { filterInventoryOrders } from './utils/search-filter';
+import { OrderInterface, InventoryOrderInterface, DispatchOrderInterface } from '@/app/lib/data';
+import { filterInventoryOrders, filterDispatchOrders } from './utils/search-filter';
 import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './utils/order-render-details';
 import { OrderList } from './order-list/order-list';
 import { Pagination } from './pagination/pagination';
@@ -25,12 +25,12 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
     // Use appropriate filter based on orderType
     const filteredOrders = orderType === 'inventory' 
         ? filterInventoryOrders(orders, searchTerm) 
-        : filterInventoryOrders(orders, searchTerm);
+        : filterDispatchOrders(orders, searchTerm);
 
     // Choose the appropriate render function based on the order type
     const renderDetails = orderType === 'inventory'
-        ? renderInventoryOrderDetails
-        : renderDispatchOrderDetails;
+    ? (order: OrderInterface, orderLink: string) => renderInventoryOrderDetails(order as InventoryOrderInterface, orderLink)
+    : (order: OrderInterface, orderLink: string) => renderDispatchOrderDetails(order as DispatchOrderInterface, orderLink);
 
     return (
         <div className={styles['orders-layout']}>
@@ -39,7 +39,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
             </div>
             <div className={styles['actions-container']}>
                 <div>
-                    <Button className={styles['add-order-button']}>Add Order +</Button>
+                    <Button className={styles['add-order-button']}>{`${orderType == "inventory" ? "Add Inventory +" : "Add Dispatch +"}`}</Button>
                 </div>
                 <div className={styles['search-container']}>
                     <img className={styles['search-icon']} src='/icons/search.svg' alt='search icon' />
@@ -57,6 +57,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
             <OrderList 
                 orders={currentOrders}  // Only pass the current orders being displayed
                 renderDetails={renderDetails}  // Pass renderDetails function
+                orderType={orderType}
             />
             <Pagination
                 data={filteredOrders}  // Pass filtered orders
