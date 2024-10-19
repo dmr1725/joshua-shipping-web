@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import styles from "./order-item.module.css";
 import { OrderInterface } from "@/app/lib/data";
 import { Lots } from "@/app/ui/common/lots/lots";
