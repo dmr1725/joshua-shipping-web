@@ -6,7 +6,7 @@ import styles from './pagination.module.css';
 interface PaginationProps {
     data: OrderInterface[];
     itemsPerPage: number;
-    onPageChange: (currentData: any[]) => void;
+    onPageChange: (currentData: OrderInterface[]) => void;
 }
 
 export const Pagination: React.FC<PaginationProps> = ({ data, itemsPerPage, onPageChange }) => {
