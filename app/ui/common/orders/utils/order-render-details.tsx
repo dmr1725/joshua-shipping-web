@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import {
   ContainerOrderInterface,
   DispatchOrderInterface,
@@ -26,9 +25,9 @@ export const renderInventoryOrderDetails = (
     </div>
     <div>
       <div>Inventory Order #{order.id}</div>
-      <Link href={orderLink} className={styles["order-link"]}>
+      <a href={orderLink} className={styles["order-link"]}>
         View order details
-      </Link>
+      </a>
     </div>
   </>
 );
@@ -53,9 +52,9 @@ export const renderDispatchOrderDetails = (
     </div>
     <div>
       <div>Dispatch Order #{order.id}</div>
-      <Link href={orderLink} className={styles["order-link"]}>
+      <a href={orderLink} className={styles["order-link"]}>
         View dispatch details
-      </Link>
+      </a>
     </div>
   </>
 );

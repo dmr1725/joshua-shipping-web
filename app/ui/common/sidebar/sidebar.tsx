@@ -60,10 +60,10 @@ export const SideBar: React.FC<SideBarProps> = ({ options }) => {
                 </div>
                 <div className={styles['sidebar-options']}>
                     {options.map((option) => (
-                        <Link href={option.link} key={option.label} className={styles['icon-info']}>
+                        <a href={option.link} key={option.label} className={styles['icon-info']}>
                             <img src={option.icon} alt={option.label} className={styles['icon']} />
                             <div>{option.label}</div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -77,10 +77,10 @@ export const SideBar: React.FC<SideBarProps> = ({ options }) => {
             {menuOpen && (
                 <div className={styles['dropdown-menu']} ref={dropdownRef}>
                     {options.map((option) => (
-                        <Link href={option.link} key={option.label} className={styles['icon-info']}>
+                        <a href={option.link} key={option.label} className={styles['icon-info']}>
                             <img src={option.icon} alt={option.label} className={styles['icon']} />
                             <div>{option.label}</div>
-                        </Link>
+                        </a>
                     ))}
                     <div className={styles['icon-info']}>
                         <img className={styles['icon']} src="/icons/logout.svg" alt="container"/>
