@@ -4,7 +4,7 @@ import styles from './orders.module.css';
 import { Button } from '../../button/button';
 import { OrderInterface } from '@/app/lib/data';
 import { OrderList } from './order-list/order-list';
-import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './order-render-details';  // Import the functions
+import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './order-render-details';
 import { Pagination } from './pagination/pagination';
 
 interface OrdersProps {
@@ -14,12 +14,11 @@ interface OrdersProps {
 
 export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]);  // State to track current orders displayed per page
     const ordersPerPage = 5;
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value.toLowerCase());
-        setCurrentPage(1);
     };
 
     const filteredOrders = orders.filter(order => {
@@ -32,20 +31,6 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
         );
         return matchOrderId || matchContainerNo || matchBl || matchLots;
     });
-
-    const indexOfLastOrder = currentPage * ordersPerPage;
-    const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
-    const currentOrders = filteredOrders.slice(indexOfFirstOrder, indexOfLastOrder);
-
-    const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
-
-    const goToNextPage = () => {
-        if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-    };
-
-    const goToPrevPage = () => {
-        if (currentPage > 1) setCurrentPage(currentPage - 1);
-    };
 
     // Choose the appropriate render function based on the order type
     const renderDetails = orderType === 'inventory'
@@ -75,14 +60,13 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
                 </div>
             </div>
             <OrderList 
-                orders={currentOrders} 
+                orders={currentOrders}  // Only pass the current orders being displayed
                 renderDetails={renderDetails}  // Pass renderDetails function
             />
             <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                goToNextPage={goToNextPage}
-                goToPrevPage={goToPrevPage}
+                data={filteredOrders}  // Pass filtered orders
+                itemsPerPage={ordersPerPage}  // Pass the number of orders per page
+                onPageChange={setCurrentOrders}  // Set the current orders to be displayed
             />
         </div>
     );
