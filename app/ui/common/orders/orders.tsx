@@ -5,6 +5,7 @@ import { Button } from '../../button/button';
 import { OrderInterface } from '@/app/lib/data';
 import { OrderList } from './order-list/order-list';
 import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './order-render-details';  // Import the functions
+import { Pagination } from './pagination/pagination';
 
 interface OrdersProps {
     orders: OrderInterface[];
@@ -84,31 +85,5 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
                 goToPrevPage={goToPrevPage}
             />
         </div>
-    );
-};
-
-// Pagination component
-interface PaginationProps {
-    currentPage: number;
-    totalPages: number;
-    goToNextPage: () => void;
-    goToPrevPage: () => void;
-}
-
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, goToNextPage, goToPrevPage }) => {
-    return (
-        <nav className={styles['pagination-nav']}>
-            <ul className={styles['pagination']}>
-                <li className={`${styles['page-item']} ${currentPage === 1 ? styles['disabled'] : ''}`} onClick={goToPrevPage}>
-                    Prev
-                </li>
-                <li className={styles['page-number']}>
-                    {currentPage} of {totalPages}
-                </li>
-                <li className={`${styles['page-item']} ${currentPage === totalPages ? styles['disabled'] : ''}`} onClick={goToNextPage}>
-                    Next
-                </li>
-            </ul>
-        </nav>
     );
 };
