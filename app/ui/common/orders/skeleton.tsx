@@ -7,7 +7,7 @@ export const OrdersSkeleton = () => {
         <>
             <div className={`${styles['orders-layout']}`}>
                 <div className={styles['orders-header-font']}>
-                    Your Orders
+                    
                 </div>
                 <div className={styles['actions-container']}>
                     <div>
