@@ -4,22 +4,25 @@ import { OrderInterface } from '@/app/lib/data';
 import styles from './order-list.module.css'
 
 interface OrdersProps {
-    orders: OrderInterface[]; // Use OrderInterface instead of OrderProps
+    orders: OrderInterface[];
+    renderDetails: (order: OrderInterface, orderLink: string) => JSX.Element;  // Pass renderDetails
 }
 
-export const OrderList: React.FC<OrdersProps> = ({orders}) => {
+export const OrderList: React.FC<OrdersProps> = ({ orders, renderDetails }) => {
     return (
         <div className={styles['orders-container']}>
-            {orders.map((order) => (
+            {orders.map((order) => {
+                const orderLink = `/orders/${order.id}`; // Generate order link (adjust for dispatch if needed)
+
+                return (
                     <OrderItem 
-                        key={order.id} // Ensure each order has a unique key
-                        id={order.id} 
-                        bl={order.bl}
-                        container_no={order.container_no}
-                        date={order.date} 
-                        lots={order.lots}
+                        key={order.id}
+                        order={order}
+                        renderDetails={renderDetails}  // Pass renderDetails prop
+                        orderLink={orderLink}  // Pass the generated link
                     />
-            ))}
+                );
+            })}
         </div>
-    )
-}
+    );
+};
