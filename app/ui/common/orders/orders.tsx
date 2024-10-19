@@ -8,7 +8,7 @@ import {
   DispatchOrderInterface,
 } from "@/app/lib/data";
 import {
-  filterInventoryOrders,
+  filterContainerOrders,
   filterDispatchOrders,
 } from "./utils/search-filter";
 import {
@@ -35,7 +35,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
   // Use appropriate filter based on orderType
   const filteredOrders =
     orderType === "inventory"
-      ? filterInventoryOrders(orders, searchTerm)
+      ? filterContainerOrders(orders, searchTerm)
       : filterDispatchOrders(orders, searchTerm);
 
   // Choose the appropriate render function based on the order type
@@ -55,8 +55,8 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
   return (
     <div className={styles["orders-layout"]}>
       <div className={styles["orders-header-font"]}>{`${
-            orderType == "inventory" ? "Containers" : "Dispatches"
-          }`}</div>
+        orderType == "inventory" ? "Containers" : "Dispatches"
+      }`}</div>
       <div className={styles["actions-container"]}>
         <div>
           <Button className={styles["add-order-button"]}>{`${

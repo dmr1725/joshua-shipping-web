@@ -21,8 +21,8 @@ export interface ContainerOrderInterface extends OrderInterface {
 
 // Interface for dispatch orders
 export interface DispatchOrderInterface extends OrderInterface {
-  driver: string;
-  pickup_time: string;
+  driver?: string;
+  pickup_time?: string;
   status?: string;
 }
 
