@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { OrderInterface } from "@/app/lib/data";
-import styles from "./orders.module.css";  // Ensure the correct path to styles
+import styles from "@/app/ui/common/orders/orders.module.css";  // Ensure the correct path to styles
 
 // Function to render details for Inventory Order
 export const renderInventoryOrderDetails = (order: OrderInterface, orderLink: string): JSX.Element => (

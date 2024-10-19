@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import styles from './orders.module.css';
 import { Button } from '../../button/button';
 import { OrderInterface } from '@/app/lib/data';
+import { filterInventoryOrders } from './utils/search-filter';
+import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './utils/order-render-details';
 import { OrderList } from './order-list/order-list';
-import { renderInventoryOrderDetails, renderDispatchOrderDetails } from './order-render-details';
 import { Pagination } from './pagination/pagination';
 
 interface OrdersProps {
@@ -21,16 +22,10 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
         setSearchTerm(e.target.value.toLowerCase());
     };
 
-    const filteredOrders = orders.filter(order => {
-        const matchOrderId = order.id.toLowerCase().includes(searchTerm);
-        const matchContainerNo = order.container_no.toLowerCase().includes(searchTerm);
-        const matchBl = order.bl.toLowerCase().includes(searchTerm);
-        const matchLots = order.lots.some(lot =>
-            lot.id.toLowerCase().includes(searchTerm) ||
-            lot.product.toLowerCase().includes(searchTerm)
-        );
-        return matchOrderId || matchContainerNo || matchBl || matchLots;
-    });
+    // Use appropriate filter based on orderType
+    const filteredOrders = orderType === 'inventory' 
+        ? filterInventoryOrders(orders, searchTerm) 
+        : filterInventoryOrders(orders, searchTerm);
 
     // Choose the appropriate render function based on the order type
     const renderDetails = orderType === 'inventory'
