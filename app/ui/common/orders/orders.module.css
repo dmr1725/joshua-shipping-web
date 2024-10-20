@@ -1,0 +1,85 @@
+.orders-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders-header-font {
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.buttons-layout {
+    display: flex;
+    gap: 1rem;
+}
+
+.add-order-button {
+    width: 8rem;
+    height: 2.875rem !important;
+    font-size: 0.875rem !important;
+}
+
+.search-container {
+    border-radius: 1.875rem;
+    border: 1px solid var(--C6DEEB, #C6DEEB);
+    background: var(--FFFFFF, #FFF);
+    width: 18rem;
+    display: flex;
+    align-items: center;
+    gap: 0.62rem;
+}
+
+.search-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding-left: 0.75rem;
+}
+
+.input-search {
+    width: 80%;
+}
+
+.order-link {
+    cursor: pointer; /* Cursor turns into a pointer */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+  
+.order-link:hover {
+    color: #FF834C; /* Change color on hover */
+}
+
+@media (max-width: 64rem) {
+
+    .search-container {
+        width: 100%;
+        border-radius: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .search-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding-left: 0.5rem;
+    }
+
+    .input-search {
+        width: 80%; /* Adjust input width to prevent truncation */
+        padding-left: 0rem; /* Add padding to prevent text from touching the edge */
+        font-size: 0.875rem;
+    }
+
+    .actions-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

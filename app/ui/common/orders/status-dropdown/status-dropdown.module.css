@@ -1,0 +1,51 @@
+/* Status button styling */
+.status-button {
+    background: #F0F7FA;
+    width: 12rem;
+    height: 2.875rem;
+    font-size: 0.875rem;
+    color: #2D7FA9;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #2D7FA9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Add hover effect for button */
+.status-button:hover {
+    background-color: #e1eff5;
+}
+
+/* Dropdown menu styling */
+.status-dropdown-menu {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    width: 12rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* High enough to be visible but can be covered by sidebar if necessary */
+}
+
+/* Dropdown item styling */
+.status-dropdown-item {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-bottom: 1px solid #ddd; /* Divider between items */
+}
+
+/* Last item should not have a bottom border */
+.status-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for dropdown items */
+.status-dropdown-item:hover {
+    background-color: #f1f1f1;
+}

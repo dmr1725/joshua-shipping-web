@@ -26,8 +26,11 @@
     padding: 0rem 4.5rem;
     overflow-y: visible; /* Enable vertical scrolling */
     height: 100vh; /* Full height for content */
-    gap: 2rem; /* Space between elements */
+    gap: 1rem; /* Space between elements */
+    min-width: 65rem;
+    margin-right: 7.5rem;
 }
+
 
 .header-layout {
     height: 8.5rem; /* Fixed height for the header */
@@ -35,7 +38,7 @@
 }
 
 .children-layout {
-    padding-top: 2rem;
+    padding-top: 2rem; /* Padding for the child layout */
     flex-grow: 1; /* Let children grow to take up space */
 }
 
@@ -53,9 +56,12 @@
 
     .content-layout {
         grid-column: 1 / -1; /* Content takes full width on mobile */
-        width: 100%; /* Full width */
-        padding: 1rem 2rem;
+        width: auto; /* Set width to auto to prevent overflow */
+        margin: 0 auto; /* Center content */
+        padding: 1rem 2rem; /* Adjust padding for mobile */
         height: auto; /* Adjust height for scrolling */
+        min-width: 23rem;
+        width: 100%;
     }
 
     .header-layout {
