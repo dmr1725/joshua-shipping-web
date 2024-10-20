@@ -11,6 +11,12 @@
     padding: 2rem;
 }
 
+.no-lots-message {
+    font-weight: bold;
+    color: #074A6B;
+    font-size: 1.5rem;
+}
+
 .lot-container {
     display: flex;
     justify-content: space-between;
@@ -55,6 +61,10 @@
         padding: 1rem; /* Reduce padding for better fit */
         flex-direction: column; /* Stack items vertically */
         gap: 0.75rem; /* Add some gap between elements for clarity */
+    }
+
+    .no-lots-message {
+        font-size: 1rem;
     }
 
     .lot-font {

@@ -27,6 +27,14 @@ export interface DispatchOrderInterface extends OrderInterface {
 
 const containerOrders: ContainerOrderInterface[] = [
   {
+    id: "114-4893-858",
+    bl: "ZAPS3M093435",
+    container_no: "CMCU 5560770",
+    status: "Pending",
+    date: "2024-10-16",
+    lots: [],
+  },
+  {
     id: "114-4893-859",
     bl: "CWPS4M097234",
     container_no: "CMCU 5560770",
