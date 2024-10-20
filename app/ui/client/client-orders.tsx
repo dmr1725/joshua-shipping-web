@@ -1,8 +1,8 @@
 // Orders.tsx
 "use client";
 import React, { useState } from "react";
-import styles from "./orders.module.css";
-import { Button } from "../../button/button";
+import styles from "@/app/ui/common/orders/orders.module.css";
+import { Button } from "@/app/ui/button/button";
 import {
   OrderInterface,
   ContainerOrderInterface,
@@ -11,14 +11,14 @@ import {
 import {
   filterContainerOrders,
   filterDispatchOrders,
-} from "./utils/search-filter";
+} from "@/app/ui/common/orders/utils/search-filter";
 import {
   renderContainerOrderDetails,
   renderDispatchOrderDetails,
-} from "./utils/order-render-details";
-import { OrderList } from "./order-list/order-list";
-import { Pagination } from "./pagination/pagination";
-import { StatusDropdown } from "./status-dropdown/status-dropdown";
+} from "@/app/ui/common/orders/utils/order-render-details";
+import { OrderList } from "@/app/ui/common/orders/order-list/order-list";
+import { Pagination } from "@/app/ui/common/orders/pagination/pagination";
+import { StatusDropdown } from "@/app/ui/common/orders/status-dropdown/status-dropdown";
 
 interface OrdersProps {
   orders: OrderInterface[];
@@ -26,7 +26,11 @@ interface OrdersProps {
   statusOptions: string[];
 }
 
-export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions }) => {
+export const ClientOrders: React.FC<OrdersProps> = ({
+  orders,
+  orderType,
+  statusOptions,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]); // State to track current orders displayed per page
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null); // State for selected status
@@ -42,16 +46,18 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions
 
   const filteredOrders =
     orderType === "containers"
-        ? filterContainerOrders(orders, searchTerm).filter((order) => {
-            const normalizedStatus =
-              order.status === "At Warehouse" || order.status === "Confirmed Inventory"
-                ? "At Warehouse"
-                : "Pending";
-            return selectedStatus ? normalizedStatus === selectedStatus : true;
+      ? filterContainerOrders(orders, searchTerm).filter((order) => {
+          const normalizedStatus =
+            order.status === "At Warehouse" ||
+            order.status === "Confirmed Inventory"
+              ? "At Warehouse"
+              : "Pending";
+          return selectedStatus ? normalizedStatus === selectedStatus : true;
         })
-        : filterDispatchOrders(orders, searchTerm).filter((order) => {
-            const normalizedStatus = order.status === "Picked Up" ? "Picked Up" : "Pending";
-            return selectedStatus ? normalizedStatus === selectedStatus : true;
+      : filterDispatchOrders(orders, searchTerm).filter((order) => {
+          const normalizedStatus =
+            order.status === "Picked Up" ? "Picked Up" : "Pending";
+          return selectedStatus ? normalizedStatus === selectedStatus : true;
         });
 
   const renderDetails =

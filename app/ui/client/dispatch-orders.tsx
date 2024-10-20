@@ -1,11 +1,11 @@
 import { fetchAllDispatchedOrders } from "@/app/lib/data";
-import { Orders } from "@/app/ui/common/orders/orders";
+import { ClientOrders } from './client-orders'
 
 export default async function DispatchOrders() {
     const orders = await fetchAllDispatchedOrders();
 
     return (
-        <Orders 
+        <ClientOrders 
             orders={orders} 
             orderType="dispatches"
             statusOptions={["Pending", "Picked Up"]}

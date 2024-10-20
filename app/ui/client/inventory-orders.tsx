@@ -1,11 +1,11 @@
 import { fetchAllContainerOrders } from "@/app/lib/data";
-import { Orders } from "@/app/ui/common/orders/orders";
+import { ClientOrders } from './client-orders'
 
 export default async function InventoryOrders() {
     const orders = await fetchAllContainerOrders();
 
     return (
-        <Orders 
+        <ClientOrders 
             orders={orders} 
             orderType="containers"
             statusOptions={["Pending", "At Warehouse"]}
