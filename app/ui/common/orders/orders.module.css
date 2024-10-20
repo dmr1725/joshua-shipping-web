@@ -59,9 +59,8 @@
 @media (max-width: 64rem) {
 
     .search-container {
-        width: 12rem;
+        width: 100%;
         border-radius: 1.25rem;
-        margin-left: -1rem; /* Shift the search container slightly to the left */
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -77,5 +76,10 @@
         width: 80%; /* Adjust input width to prevent truncation */
         padding-left: 0rem; /* Add padding to prevent text from touching the edge */
         font-size: 0.875rem;
+    }
+
+    .actions-container {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
