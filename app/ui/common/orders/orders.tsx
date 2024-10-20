@@ -1,3 +1,4 @@
+// Orders.tsx
 "use client";
 import React, { useState } from "react";
 import styles from "./orders.module.css";
@@ -17,17 +18,17 @@ import {
 } from "./utils/order-render-details";
 import { OrderList } from "./order-list/order-list";
 import { Pagination } from "./pagination/pagination";
+import { StatusDropdown } from "./status-dropdown/status-dropdown";
 
 interface OrdersProps {
   orders: OrderInterface[];
   orderType: "containers" | "dispatches"; // New prop to specify the type of order
-  statusOptions: string[]
+  statusOptions: string[];
 }
 
 export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]); // State to track current orders displayed per page
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null); // State for selected status
   const ordersPerPage = 5;
 
@@ -35,42 +36,24 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown visibility
-  };
-
-  const handleStatusSelect = (status: string) => {
+  const handleStatusSelect = (status: string | null) => {
     setSelectedStatus(status); // Set the selected status
-    setIsDropdownOpen(false); // Close dropdown after selection
   };
 
-  const clearFilter = () => {
-    setSelectedStatus(null); // Reset status filter
-    setIsDropdownOpen(false); // Close dropdown
-  };
-
-  // Use appropriate filter based on orderType and selected status
   const filteredOrders =
     orderType === "containers"
         ? filterContainerOrders(orders, searchTerm).filter((order) => {
-            // Normalize status
             const normalizedStatus =
-            order.status === "At Warehouse" || order.status === "Confirmed Inventory"
+              order.status === "At Warehouse" || order.status === "Confirmed Inventory"
                 ? "At Warehouse"
                 : "Pending";
-
-            // Apply status filtering if selectedStatus is set
             return selectedStatus ? normalizedStatus === selectedStatus : true;
         })
         : filterDispatchOrders(orders, searchTerm).filter((order) => {
-            // Same logic for dispatch orders if needed
-            const normalizedStatus =
-            order.status === "Picked Up" ? "Picked Up": "Pending";
-
+            const normalizedStatus = order.status === "Picked Up" ? "Picked Up" : "Pending";
             return selectedStatus ? normalizedStatus === selectedStatus : true;
         });
 
-  // Choose the appropriate render function based on the order type
   const renderDetails =
     orderType === "containers"
       ? (order: OrderInterface, orderLink: string) =>
@@ -91,36 +74,11 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions
       }`}</div>
       <div className={styles["actions-container"]}>
         <div className={styles["buttons-layout"]}>
-          <div className={styles["status-dropdown-container"]}>
-            <Button
-              className={styles["status-button"]}
-              onClick={toggleDropdown}
-            >
-              <div>{selectedStatus ? selectedStatus : "Filter By Status"}</div>
-              <img src="/icons/polygon.svg" alt="polygon" />
-            </Button>
-            {isDropdownOpen && (
-              <div className={styles["status-dropdown-menu"]}>
-                {statusOptions.map((status) => (
-                  <div
-                    key={status}
-                    className={styles["status-dropdown-item"]}
-                    onClick={() => handleStatusSelect(status)}
-                  >
-                    {status}
-                  </div>
-                ))}
-                {/* Add an option to clear the filter */}
-                <div
-                  className={styles["status-dropdown-item"]}
-                  onClick={clearFilter}
-                  style={{ fontWeight: "bold", color: "#FF6347" }} // Style for "Clear Filter"
-                >
-                  Clear Filter
-                </div>
-              </div>
-            )}
-          </div>
+          <StatusDropdown
+            selectedStatus={selectedStatus}
+            onStatusSelect={handleStatusSelect}
+            statusOptions={statusOptions}
+          />
           <div>
             <Button className={styles["add-order-button"]}>{`${
               orderType == "containers" ? "Add Container +" : "Add Dispatch +"

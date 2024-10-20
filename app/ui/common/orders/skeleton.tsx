@@ -1,4 +1,5 @@
 import styles from './orders.module.css'; // Import your existing styles
+import statusStyles from './status-dropdown/status-dropdown.module.css'
 import { Button } from '../../button/button';
 import { OrderItemSkeleton } from './order-item/skeleton';
     
@@ -11,8 +12,8 @@ export const OrdersSkeleton = () => {
                 </div>
                 <div className={styles['actions-container']}>
                 <div className={styles["buttons-layout"]}>
-                    <div className={styles["status-dropdown-container"]}>
-                        <Button className={styles["status-button"]}>
+                    <div className={statusStyles["status-dropdown-container"]}>
+                        <Button className={statusStyles["status-button"]}>
                             <div>Filter By Status</div>
                             <img src="/icons/polygon.svg" alt="polygon" />
                         </Button>
