@@ -10,8 +10,16 @@ export const OrdersSkeleton = () => {
                     
                 </div>
                 <div className={styles['actions-container']}>
+                <div className={styles["buttons-layout"]}>
+                    <div className={styles["status-dropdown-container"]}>
+                        <Button className={styles["status-button"]}>
+                            <div>Filter By Status</div>
+                            <img src="/icons/polygon.svg" alt="polygon" />
+                        </Button>
+                    </div>
                     <div>
-                        <Button className={styles['add-order-button']}>Add Order +</Button>
+                        <Button className={styles["add-order-button"]}>Orders</Button>
+                    </div>
                     </div>
                     <div className={styles['search-container']}>
                         <img className={styles['search-icon']} src='/icons/search.svg' alt='search photo' />

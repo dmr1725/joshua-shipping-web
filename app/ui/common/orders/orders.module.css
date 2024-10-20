@@ -22,7 +22,7 @@
 }
 
 /* Dropdown container to hold button and dropdown list */
-.dropdown-container {
+.status-dropdown-container {
     position: relative;
     display: inline-block;
 }
@@ -56,12 +56,12 @@
 }
 
 /* Dropdown menu styling */
-.dropdown-menu {
+.status-dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--dropdown-bg-color, #fff); /* Replace with your dropdown background color */
-    border: 1px solid var(--dropdown-border-color, #ddd); /* Soft border color */
+    background-color: #fff; /* Replace with your dropdown background color */
+    border: 1px solid #ddd; /* Soft border color */
     border-radius: 0.5rem;
     margin-top: 0.5rem;
     width: 100%; /* Make dropdown the same width as the button */
@@ -71,7 +71,7 @@
 }
 
 /* Dropdown item styling */
-.dropdown-item {
+.status-dropdown-item {
     padding: 0.75rem 1rem;
     font-size: 1rem;
     color: var(--dropdown-text-color, #333); /* Replace with your text color */
@@ -81,17 +81,17 @@
 }
 
 /* Last item should not have a bottom border */
-.dropdown-item:last-child {
+.status-dropdown-item:last-child {
     border-bottom: none;
 }
 
 /* Hover effect for dropdown items */
-.dropdown-item:hover {
+.status-dropdown-item:hover {
     background-color: var(--dropdown-hover-bg-color, #f1f1f1); /* Lighter background on hover */
 }
 
 /* Subtle fade-in effect for dropdown menu */
-.dropdown-menu {
+.status-dropdown-menu {
     opacity: 0;
     transform: translateY(-0.5rem);
     animation: fadeIn 0.3s forwards;

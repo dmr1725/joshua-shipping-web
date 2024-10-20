@@ -91,7 +91,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions
       }`}</div>
       <div className={styles["actions-container"]}>
         <div className={styles["buttons-layout"]}>
-          <div className={styles["dropdown-container"]}>
+          <div className={styles["status-dropdown-container"]}>
             <Button
               className={styles["status-button"]}
               onClick={toggleDropdown}
@@ -100,11 +100,11 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions
               <img src="/icons/polygon.svg" alt="polygon" />
             </Button>
             {isDropdownOpen && (
-              <div className={styles["dropdown-menu"]}>
+              <div className={styles["status-dropdown-menu"]}>
                 {statusOptions.map((status) => (
                   <div
                     key={status}
-                    className={styles["dropdown-item"]}
+                    className={styles["status-dropdown-item"]}
                     onClick={() => handleStatusSelect(status)}
                   >
                     {status}
@@ -112,7 +112,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions
                 ))}
                 {/* Add an option to clear the filter */}
                 <div
-                  className={styles["dropdown-item"]}
+                  className={styles["status-dropdown-item"]}
                   onClick={clearFilter}
                   style={{ fontWeight: "bold", color: "#FF6347" }} // Style for "Clear Filter"
                 >
