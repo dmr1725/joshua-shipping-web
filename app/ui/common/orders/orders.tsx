@@ -21,9 +21,10 @@ import { Pagination } from "./pagination/pagination";
 interface OrdersProps {
   orders: OrderInterface[];
   orderType: "containers" | "dispatches"; // New prop to specify the type of order
+  statusOptions: string[]
 }
 
-export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
+export const Orders: React.FC<OrdersProps> = ({ orders, orderType, statusOptions }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]); // State to track current orders displayed per page
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
@@ -64,9 +65,7 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
         : filterDispatchOrders(orders, searchTerm).filter((order) => {
             // Same logic for dispatch orders if needed
             const normalizedStatus =
-            order.status === "At Warehouse" || order.status === "Confirmed Inventory"
-                ? "At Warehouse"
-                : "Pending";
+            order.status === "Picked Up" ? "Picked Up": "Pending";
 
             return selectedStatus ? normalizedStatus === selectedStatus : true;
         });
@@ -84,8 +83,6 @@ export const Orders: React.FC<OrdersProps> = ({ orders, orderType }) => {
             order as DispatchOrderInterface,
             orderLink
           );
-
-  const statusOptions = ["Pending", "At Warehouse"];
 
   return (
     <div className={styles["orders-layout"]}>

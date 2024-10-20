@@ -8,6 +8,7 @@ export default async function DispatchOrders() {
         <Orders 
             orders={orders} 
             orderType="dispatches"
+            statusOptions={["Pending", "Picked Up"]}
         />
     );
 }

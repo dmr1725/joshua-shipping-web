@@ -8,6 +8,7 @@ export default async function InventoryOrders() {
         <Orders 
             orders={orders} 
             orderType="containers"
+            statusOptions={["Pending", "At Warehouse"]}
         />
     );
 }
