@@ -39,7 +39,7 @@ export const renderDispatchOrderDetails = (
 ): JSX.Element => (
   <>
     <div>
-      <div>Dispatch Date</div>
+      <div>Dispatch placed</div>
       <div>{order.date}</div>
     </div>
     <div>
