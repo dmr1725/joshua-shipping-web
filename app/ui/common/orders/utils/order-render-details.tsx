@@ -12,7 +12,7 @@ export const renderContainerReceiptDetails = (
 ): JSX.Element => (
   <>
     <div>
-      <div>Order placed</div>
+      <div>Receipt placed</div>
       <div>{order.date}</div>
     </div>
     <div>
@@ -24,9 +24,9 @@ export const renderContainerReceiptDetails = (
       <div>{order.container_no}</div>
     </div>
     <div>
-      <div>Container Order #{order.id}</div>
+      <div>Receipt #{order.id}</div>
       <a href={orderLink} className={styles["order-link"]}>
-        View order details
+        View receipt details
       </a>
     </div>
   </>
@@ -51,7 +51,7 @@ export const renderDispatchOrderDetails = (
       <div>{order.driver}</div>
     </div>
     <div>
-      <div>Dispatch Order #{order.id}</div>
+      <div>Dispatch #{order.id}</div>
       <a href={orderLink} className={styles["order-link"]}>
         View dispatch details
       </a>
