@@ -8,7 +8,7 @@ export default async function ContainersReceipt() {
     <ClientOrders
       orders={orders}
       orderType="containers"
-      statusOptions={["Pending", "At Warehouse"]}
+      statusOptions={["Pending", "Warehouse"]}
     />
   );
 }

@@ -131,7 +131,7 @@ const containerOrders: ContainerReceiptInterface[] = [
     id: "119-4893-864",
     bl: "UIOPQWERTY123",
     container_no: "ABC 3456789",
-    status: "At Warehouse",
+    status: "Warehouse",
     date: "2024-10-05",
     lots: [
       {
@@ -152,7 +152,7 @@ const containerOrders: ContainerReceiptInterface[] = [
     id: "120-4893-865",
     bl: "TYUIO987654",
     container_no: "DEF 4567890",
-    status: "At Warehouse",
+    status: "Warehouse",
     date: "2024-10-02",
     lots: [
       {
@@ -167,7 +167,7 @@ const containerOrders: ContainerReceiptInterface[] = [
     id: "121-4893-866",
     bl: "GHJKL234567",
     container_no: "GHI 6789012",
-    status: "At Warehouse",
+    status: "Warehouse",
     date: "2024-09-30",
     lots: [
       {
@@ -188,7 +188,7 @@ const containerOrders: ContainerReceiptInterface[] = [
     id: "122-4893-867",
     bl: "NMNBVCXZ321",
     container_no: "JKL 7890123",
-    status: "At Warehouse",
+    status: "Warehouse",
     date: "2024-09-28",
     lots: [
       {
@@ -203,7 +203,7 @@ const containerOrders: ContainerReceiptInterface[] = [
     id: "123-4893-868",
     bl: "QWERTY456789",
     container_no: "MNO 8901234",
-    status: "At Warehouse",
+    status: "Warehouse",
     date: "2024-09-25",
     lots: [
       {
