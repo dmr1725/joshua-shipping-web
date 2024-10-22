@@ -1,18 +1,18 @@
 import React from "react";
 import {
-  ContainerOrderInterface,
+  ContainerReceiptInterface,
   DispatchOrderInterface,
 } from "@/app/lib/data";
 import styles from "@/app/ui/common/orders/orders.module.css"; // Ensure the correct path to styles
 
-// Function to render details for Inventory Order
-export const renderContainerOrderDetails = (
-  order: ContainerOrderInterface,
+// Function to render details for container receipt
+export const renderContainerReceiptDetails = (
+  order: ContainerReceiptInterface,
   orderLink: string
 ): JSX.Element => (
   <>
     <div>
-      <div>Order placed</div>
+      <div>Receipt placed</div>
       <div>{order.date}</div>
     </div>
     <div>
@@ -24,9 +24,9 @@ export const renderContainerOrderDetails = (
       <div>{order.container_no}</div>
     </div>
     <div>
-      <div>Container Order #{order.id}</div>
+      <div>Receipt #{order.id}</div>
       <a href={orderLink} className={styles["order-link"]}>
-        View order details
+        View receipt details
       </a>
     </div>
   </>
@@ -39,7 +39,7 @@ export const renderDispatchOrderDetails = (
 ): JSX.Element => (
   <>
     <div>
-      <div>Dispatch Date</div>
+      <div>Dispatch placed</div>
       <div>{order.date}</div>
     </div>
     <div>
@@ -51,7 +51,7 @@ export const renderDispatchOrderDetails = (
       <div>{order.driver}</div>
     </div>
     <div>
-      <div>Dispatch Order #{order.id}</div>
+      <div>Dispatch #{order.id}</div>
       <a href={orderLink} className={styles["order-link"]}>
         View dispatch details
       </a>
