@@ -6,7 +6,7 @@ import styles from "./filter-dropdown.module.css";
 interface FilterByDropdownProps {
   filterType: string;
   selectedFilter: string | null;
-  onFilterSelect: (filterOption: string | null) => void;
+  onFilterSelect: (filterOption: string) => void;
   filterOptions: string[];
 }
 
@@ -25,7 +25,7 @@ export const FilterByDropdown: React.FC<FilterByDropdownProps> = ({
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleFilterSelect = (filterOption: string | null) => {
+  const handleFilterSelect = (filterOption: string) => {
     onFilterSelect(filterOption);
     setIsDropdownOpen(false);
   };
@@ -84,7 +84,7 @@ export const FilterByDropdown: React.FC<FilterByDropdownProps> = ({
             ))}
             <div
               className={styles["filter-dropdown-item"]}
-              onClick={() => handleFilterSelect(null)}
+              onClick={() => handleFilterSelect('')}
               style={{ fontWeight: "bold", color: "#FF6347" }}
             >
               Clear Filter

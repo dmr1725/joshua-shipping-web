@@ -8,7 +8,8 @@ export default async function ContainersReceipt() {
     <ClientOrders
       orders={orders}
       orderType="containers"
-      statusOptions={["Pending", "Warehouse"]}
+      statusOptions={["Pending", "Confirmed Inventory"]}
+      dateOptions={["1 week", "3 months", "2024"]}
     />
   );
 }

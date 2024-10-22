@@ -29,21 +29,30 @@ export interface DispatchOrderInterface extends OrderInterface {
 
 const containerOrders: ContainerReceiptInterface[] = [
     {
+      id: "114-4893-857",
+      bl: "BXTN8LW62790",
+      container_no: "CMCU 773622470",
+      status: "Received",
+      date: new Date("2024-10-22"),
+      ETA: new Date("2024-10-23"),
+      lots: [],
+    },
+    {
       id: "114-4893-858",
       bl: "ZAPS3M093435",
       container_no: "CMCU 5560770",
-      status: "Pending",
-      date: new Date("2024-10-16"),
-      ETA: new Date("2024-10-17"),
+      status: "Inspection",
+      date: new Date("2024-10-22"),
+      ETA: new Date("2024-10-23"),
       lots: [],
     },
     {
       id: "114-4893-859",
       bl: "CWPS4M097234",
       container_no: "CMCU 5560770",
-      status: "Pending",
-      date: new Date("2024-10-16"),
-      ETA: new Date("2024-10-17"),
+      status: "Confirmed Inventory",
+      date: new Date("2024-10-21"),
+      ETA: new Date("2024-10-22"),
       lots: [
         {
           id: "1829",
@@ -63,9 +72,9 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "115-4893-860",
       bl: "XYPL5N098765",
       container_no: "XYZU 1234567",
-      status: "Pending",
-      date: new Date("2024-10-10"),
-      ETA: new Date("2024-10-11"),
+      status: "Confirmed Inventory",
+      date: new Date("2024-10-21"),
+      ETA: new Date("2024-10-22"),
       lots: [
         {
           id: "1831",
@@ -79,9 +88,9 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "116-4893-861",
       bl: "QWERTY098765",
       container_no: "LMNO 8901234",
-      status: "Pending",
-      date: new Date("2024-10-14"),
-      ETA: new Date("2024-10-15"),
+      status: "Confirmed Inventory",
+      date: new Date("2024-10-21"),
+      ETA: new Date("2024-10-22"),
       lots: [
         {
           id: "1832",
@@ -101,7 +110,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "117-4893-862",
       bl: "ASDFGH123456",
       container_no: "PQRS 5678901",
-      status: "Pending",
+      status: "Confirmed Inventory",
       date: new Date("2024-10-12"),
       ETA: new Date("2024-10-13"),
       lots: [
@@ -123,7 +132,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "118-4893-863",
       bl: "ZXCVBN54321",
       container_no: "TUVW 2345678",
-      status: "Pending",
+      status: "Confirmed Inventory",
       date: new Date("2024-10-08"),
       ETA: new Date("2024-10-09"),
       lots: [
@@ -139,7 +148,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "119-4893-864",
       bl: "UIOPQWERTY123",
       container_no: "ABC 3456789",
-      status: "Warehouse",
+      status: "Confirmed Inventory",
       date: new Date("2024-10-05"),
       ETA: new Date("2024-10-06"),
       lots: [
@@ -161,7 +170,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "120-4893-865",
       bl: "TYUIO987654",
       container_no: "DEF 4567890",
-      status: "Warehouse",
+      status: "Confirmed Inventory",
       date: new Date("2024-10-02"),
       ETA: new Date("2024-10-03"),
       lots: [
@@ -177,7 +186,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "121-4893-866",
       bl: "GHJKL234567",
       container_no: "GHI 6789012",
-      status: "Warehouse",
+      status: "Confirmed Inventory",
       date: new Date("2024-09-30"),
       ETA: new Date("2024-09-30"),
       lots: [
@@ -199,7 +208,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "122-4893-867",
       bl: "NMNBVCXZ321",
       container_no: "JKL 7890123",
-      status: "Warehouse",
+      status: "Confirmed Inventory",
       date: new Date("2024-09-28"),
       ETA: new Date("2024-09-29"),
       lots: [
@@ -215,7 +224,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "123-4893-868",
       bl: "QWERTY456789",
       container_no: "MNO 8901234",
-      status: "Warehouse",
+      status: "Confirmed Inventory",
       date: new Date("2024-09-25"),
       ETA: new Date("2024-09-26"),
       lots: [
@@ -234,9 +243,9 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "114-4893-859",
       delivery_company: "PR Delivery",
       driver: "Juan Martinez",
-      status: "Pending",
-      date: new Date("2024-10-16"), // Date object for date
-      pickup_date: new Date("2024-10-16T13:00:00"), // Combine date + pickup time
+      status: "Received",
+      date: new Date("2024-10-22"), // Date object for date
+      pickup_date: new Date("2024-10-22T13:00:00"), // Combine date + pickup time
       lots: [
         {
           id: "1829",
@@ -254,9 +263,9 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "115-5234-960",
       delivery_company: "PR Delivery",
       driver: "Maria Lopez",
-      status: "Pending",
-      date: new Date("2024-10-17"),
-      pickup_date: new Date("2024-10-17T10:30:00"), // Combine date + pickup time
+      status: "Received",
+      date: new Date("2024-10-21"),
+      pickup_date: new Date("2024-10-21T10:30:00"), // Combine date + pickup time
       lots: [
         {
           id: "1831",
@@ -274,7 +283,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "116-8745-721",
       delivery_company: "PR Delivery",
       driver: "Pedro Gonzalez",
-      status: "Pending",
+      status: "Packaging",
       date: new Date("2024-10-18"),
       pickup_date: new Date("2024-10-18T08:15:00"),
       lots: [
@@ -294,7 +303,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "117-6394-832",
       delivery_company: "PR Delivery",
       driver: "Lucia Fernandez",
-      status: "Pending",
+      status: "Picked Up",
       date: new Date("2024-10-18"),
       pickup_date: new Date("2024-10-18T14:45:00"),
       lots: [
@@ -314,9 +323,9 @@ const containerOrders: ContainerReceiptInterface[] = [
       id: "118-7594-923",
       delivery_company: "PR Delivery",
       driver: "Carlos Ramirez",
-      status: "Pending",
-      date: new Date("2024-10-19"),
-      pickup_date: new Date("2024-10-19T16:30:00"),
+      status: "Picked Up",
+      date: new Date("2024-10-11"),
+      pickup_date: new Date("2024-10-11T16:30:00"),
       lots: [
         {
           id: "1837",
@@ -335,8 +344,8 @@ const containerOrders: ContainerReceiptInterface[] = [
       delivery_company: "PR Delivery",
       driver: "Ana Morales",
       status: "Picked Up",
-      date: new Date("2024-10-19"),
-      pickup_date: new Date("2024-10-19T09:00:00"),
+      date: new Date("2024-10-11"),
+      pickup_date: new Date("2024-10-11T09:00:00"),
       lots: [
         {
           id: "1839",
@@ -355,8 +364,8 @@ const containerOrders: ContainerReceiptInterface[] = [
       delivery_company: "PR Delivery",
       driver: "Ricardo Martinez",
       status: "Picked Up",
-      date: new Date("2024-10-20"),
-      pickup_date: new Date("2024-10-20T15:00:00"),
+      date: new Date("2024-10-10"),
+      pickup_date: new Date("2024-10-10T15:00:00"),
       lots: [
         {
           id: "1841",
@@ -375,8 +384,8 @@ const containerOrders: ContainerReceiptInterface[] = [
       delivery_company: "PR Delivery",
       driver: "Sofia Reyes",
       status: "Picked Up",
-      date: new Date("2024-10-20"),
-      pickup_date: new Date("2024-10-20T11:00:00"),
+      date: new Date("2024-10-10"),
+      pickup_date: new Date("2024-10-10T11:00:00"),
       lots: [
         {
           id: "1843",
@@ -395,8 +404,8 @@ const containerOrders: ContainerReceiptInterface[] = [
       delivery_company: "PR Delivery",
       driver: "Jorge Sanchez",
       status: "Picked Up",
-      date: new Date("2024-10-21"),
-      pickup_date: new Date("2024-10-21T06:45:00"),
+      date: new Date("2024-10-08"),
+      pickup_date: new Date("2024-10-08T06:45:00"),
       lots: [
         {
           id: "1845",
@@ -415,8 +424,8 @@ const containerOrders: ContainerReceiptInterface[] = [
       delivery_company: "PR Delivery",
       driver: "Laura Perez",
       status: "Picked Up",
-      date: new Date("2024-10-21"),
-      pickup_date: new Date("2024-10-21T19:30:00"),
+      date: new Date("2024-10-08"),
+      pickup_date: new Date("2024-10-08T19:30:00"),
       lots: [
         {
           id: "1847",
