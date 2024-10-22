@@ -1,7 +1,7 @@
-/* Status button styling */
-.status-button {
+/* Filter By button styling */
+.filter-button {
     background: #F0F7FA;
-    width: 12rem;
+    width: 10rem;
     height: 2.875rem;
     font-size: 0.875rem;
     color: #2D7FA9;
@@ -16,12 +16,12 @@
 }
 
 /* Add hover effect for button */
-.status-button:hover {
+.filter-button:hover {
     background-color: #e1eff5;
 }
 
 /* Dropdown menu styling */
-.status-dropdown-menu {
+.filter-dropdown-menu {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
@@ -31,7 +31,7 @@
 }
 
 /* Dropdown item styling */
-.status-dropdown-item {
+.filter-dropdown-item {
     padding: 0.75rem 1rem;
     font-size: 1rem;
     color: #333;
@@ -41,11 +41,11 @@
 }
 
 /* Last item should not have a bottom border */
-.status-dropdown-item:last-child {
+.filter-dropdown-item:last-child {
     border-bottom: none;
 }
 
 /* Hover effect for dropdown items */
-.status-dropdown-item:hover {
+.filter-dropdown-item:hover {
     background-color: #f1f1f1;
 }

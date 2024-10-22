@@ -17,8 +17,8 @@ import {
   renderDispatchOrderDetails,
 } from "@/app/ui/common/orders/utils/order-render-details";
 import { OrderList } from "@/app/ui/common/orders/order-list/order-list";
-import { Pagination } from "@/app/ui/common/orders/pagination/pagination";
-import { StatusDropdown } from "@/app/ui/common/orders/status-dropdown/status-dropdown";
+import { Pagination } from "@/app/ui/common/pagination/pagination";
+import { FilterByDropdown } from "../common/filter-by-dropdown/filter-by-dropdown";
 
 interface OrdersProps {
   orders: OrderInterface[];
@@ -34,6 +34,7 @@ export const ClientOrders: React.FC<OrdersProps> = ({
   const [searchTerm, setSearchTerm] = useState("");
   const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]); // State to track current orders displayed per page
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null); // State for selected status
+  const [selectedDate, setSelectedDate] = useState<string | null>(null); // State for selected date
   const ordersPerPage = 5;
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,13 +45,17 @@ export const ClientOrders: React.FC<OrdersProps> = ({
     setSelectedStatus(status); // Set the selected status
   };
 
+  const handleDateSelect = (date: string | null) => {
+    setSelectedDate(date); // Set the selected date
+  };
+
   const filteredOrders =
     orderType === "containers"
       ? filterContainersReceipt(orders, searchTerm).filter((order) => {
           const normalizedStatus =
-            order.status === "At Warehouse" ||
+            order.status === "Warehouse" ||
             order.status === "Confirmed Inventory"
-              ? "At Warehouse"
+              ? "Warehouse"
               : "Pending";
           return selectedStatus ? normalizedStatus === selectedStatus : true;
         })
@@ -75,21 +80,30 @@ export const ClientOrders: React.FC<OrdersProps> = ({
 
   return (
     <div className={styles["orders-layout"]}>
-      <div className={styles["orders-header-font"]}>{`${
-        orderType == "containers" ? "Containers" : "Dispatches"
-      }`}</div>
+      <div className="flex flex-col gap-[1rem] lg:flex-row lg:justify-between">
+        <div className={styles["orders-header-font"]}>{`${
+          orderType == "containers" ? "Containers" : "Dispatches"
+        }`}</div>
+        <div>
+          <Button className={styles["add-order-button"]}>{`${
+            orderType == "containers" ? "Add Container +" : "Add Dispatch +"
+          }`}</Button>
+        </div>
+      </div>
       <div className={styles["actions-container"]}>
         <div className={styles["buttons-layout"]}>
-          <StatusDropdown
-            selectedStatus={selectedStatus}
-            onStatusSelect={handleStatusSelect}
-            statusOptions={statusOptions}
+          <FilterByDropdown
+            filterType="Date"
+            selectedFilter={selectedDate}
+            onFilterSelect={handleDateSelect}
+            filterOptions={["3 months", "2024"]}
           />
-          <div>
-            <Button className={styles["add-order-button"]}>{`${
-              orderType == "containers" ? "Add Container +" : "Add Dispatch +"
-            }`}</Button>
-          </div>
+          <FilterByDropdown
+            filterType="Status"
+            selectedFilter={selectedStatus}
+            onFilterSelect={handleStatusSelect}
+            filterOptions={statusOptions}
+          />
         </div>
         <div className={styles["search-container"]}>
           <img
