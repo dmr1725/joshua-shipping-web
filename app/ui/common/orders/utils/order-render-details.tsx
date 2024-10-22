@@ -13,7 +13,7 @@ export const renderContainerReceiptDetails = (
   <>
     <div>
       <div>Receipt placed</div>
-      <div>{order.date}</div>
+      <div>{order.date.toLocaleDateString('en-US', { timeZone: 'UTC' })}</div>
     </div>
     <div>
       <div>Bill of Lading</div>
@@ -39,12 +39,12 @@ export const renderDispatchOrderDetails = (
 ): JSX.Element => (
   <>
     <div>
-      <div>Dispatch placed</div>
-      <div>{order.date}</div>
+      <div>Pick up date</div>
+      <div>{order.pickup_date?.toLocaleDateString('en-US', { timeZone: 'UTC' })}</div>
     </div>
     <div>
-      <div>Pick up time</div>
-      <div>{order.pickup_time}</div>
+      <div>Carrier</div>
+      <div>{order.delivery_company}</div>
     </div>
     <div>
       <div>Driver</div>
