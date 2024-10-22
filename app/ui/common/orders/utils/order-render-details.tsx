@@ -1,13 +1,13 @@
 import React from "react";
 import {
-  ContainerOrderInterface,
+  ContainerReceiptInterface,
   DispatchOrderInterface,
 } from "@/app/lib/data";
 import styles from "@/app/ui/common/orders/orders.module.css"; // Ensure the correct path to styles
 
 // Function to render details for Inventory Order
-export const renderContainerOrderDetails = (
-  order: ContainerOrderInterface,
+export const renderContainerReceiptDetails = (
+  order: ContainerReceiptInterface,
   orderLink: string
 ): JSX.Element => (
   <>

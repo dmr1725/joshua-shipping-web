@@ -1,12 +1,12 @@
 import {
-  ContainerOrderInterface,
+  ContainerReceiptInterface,
   DispatchOrderInterface,
 } from "@/app/lib/data";
 
-export const filterContainerOrders = (
-  orders: ContainerOrderInterface[],
+export const filterContainersReceipt = (
+  orders: ContainerReceiptInterface[],
   searchTerm: string
-): ContainerOrderInterface[] => {
+): ContainerReceiptInterface[] => {
   return orders.filter((order) => {
     const matchOrderId = order.id.toLowerCase().includes(searchTerm);
     const matchContainerNo = order.container_no

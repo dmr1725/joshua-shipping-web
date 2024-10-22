@@ -5,15 +5,15 @@ import styles from "@/app/ui/common/orders/orders.module.css";
 import { Button } from "@/app/ui/button/button";
 import {
   OrderInterface,
-  ContainerOrderInterface,
+  ContainerReceiptInterface,
   DispatchOrderInterface,
 } from "@/app/lib/data";
 import {
-  filterContainerOrders,
+  filterContainersReceipt,
   filterDispatchOrders,
 } from "@/app/ui/common/orders/utils/search-filter";
 import {
-  renderContainerOrderDetails,
+  renderContainerReceiptDetails,
   renderDispatchOrderDetails,
 } from "@/app/ui/common/orders/utils/order-render-details";
 import { OrderList } from "@/app/ui/common/orders/order-list/order-list";
@@ -46,7 +46,7 @@ export const ClientOrders: React.FC<OrdersProps> = ({
 
   const filteredOrders =
     orderType === "containers"
-      ? filterContainerOrders(orders, searchTerm).filter((order) => {
+      ? filterContainersReceipt(orders, searchTerm).filter((order) => {
           const normalizedStatus =
             order.status === "At Warehouse" ||
             order.status === "Confirmed Inventory"
@@ -63,8 +63,8 @@ export const ClientOrders: React.FC<OrdersProps> = ({
   const renderDetails =
     orderType === "containers"
       ? (order: OrderInterface, orderLink: string) =>
-          renderContainerOrderDetails(
-            order as ContainerOrderInterface,
+          renderContainerReceiptDetails(
+            order as ContainerReceiptInterface,
             orderLink
           )
       : (order: OrderInterface, orderLink: string) =>

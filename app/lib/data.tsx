@@ -13,8 +13,8 @@ export interface OrderInterface {
   lots: LotInterface[];
 }
 
-// Interface for inventory orders
-export interface ContainerOrderInterface extends OrderInterface {
+// Interface for containers receipts
+export interface ContainerReceiptInterface extends OrderInterface {
   container_no?: string;
   bl?: string;
 }
@@ -25,7 +25,7 @@ export interface DispatchOrderInterface extends OrderInterface {
   pickup_time?: string;
 }
 
-const containerOrders: ContainerOrderInterface[] = [
+const containerOrders: ContainerReceiptInterface[] = [
   {
     id: "114-4893-858",
     bl: "ZAPS3M093435",
@@ -418,7 +418,7 @@ export const fetchCompanyName = async (): Promise<string> => {
 };
 
 export const fetchAllContainerOrders = async (): Promise<
-  ContainerOrderInterface[]
+  ContainerReceiptInterface[]
 > => {
   return new Promise((resolve) => {
     setTimeout(() => {
