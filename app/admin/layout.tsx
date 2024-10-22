@@ -1,5 +1,5 @@
 import AdminSideBar from "../ui/admin/admin-sidebar";
-import DashboardHeaderWrapper from "../ui/common/header/admin-wrapper";
+import DashboardHeaderWrapper from "../ui/common/header/wrapper";
 import { DashboardHeaderSkeleton } from "../ui/common/header/skeleton";
 import { Suspense } from "react";
 import styles from "../dashboard/layout.module.css";
