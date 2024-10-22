@@ -5,7 +5,7 @@ import {
 } from "@/app/lib/data";
 import styles from "@/app/ui/common/orders/orders.module.css"; // Ensure the correct path to styles
 
-// Function to render details for Inventory Order
+// Function to render details for container receipt
 export const renderContainerReceiptDetails = (
   order: ContainerReceiptInterface,
   orderLink: string
