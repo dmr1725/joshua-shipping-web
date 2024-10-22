@@ -1,18 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/app/ui/button/button";
 import { createPortal } from "react-dom";
-import styles from "./status-dropdown.module.css";
+import styles from "./filter-dropdown.module.css";
 
-interface StatusDropdownProps {
-  selectedStatus: string | null;
-  onStatusSelect: (status: string | null) => void;
-  statusOptions: string[];
+interface FilterByDropdownProps {
+  filterType: string;
+  selectedFilter: string | null;
+  onFilterSelect: (filterOption: string) => void;
+  filterOptions: string[];
 }
 
-export const StatusDropdown: React.FC<StatusDropdownProps> = ({
-  selectedStatus,
-  onStatusSelect,
-  statusOptions,
+export const FilterByDropdown: React.FC<FilterByDropdownProps> = ({
+  filterType,
+  selectedFilter,
+  onFilterSelect,
+  filterOptions,
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -23,8 +25,8 @@ export const StatusDropdown: React.FC<StatusDropdownProps> = ({
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleStatusSelect = (status: string | null) => {
-    onStatusSelect(status);
+  const handleFilterSelect = (filterOption: string) => {
+    onFilterSelect(filterOption);
     setIsDropdownOpen(false);
   };
 
@@ -56,10 +58,10 @@ export const StatusDropdown: React.FC<StatusDropdownProps> = ({
   }, [isDropdownOpen]);
 
   return (
-    <div className={styles["status-dropdown-container"]}>
+    <div className={styles["filter-dropdown-container"]}>
       <div ref={buttonRef}>
-        <Button className={styles["status-button"]} onClick={toggleDropdown}>
-          <div>{selectedStatus ? selectedStatus : "Filter By Status"}</div>
+        <Button className={styles["filter-button"]} onClick={toggleDropdown}>
+          <div>{selectedFilter ? selectedFilter : filterType}</div>
           <img src="/icons/polygon.svg" alt="dropdown icon" />
         </Button>
       </div>
@@ -68,21 +70,21 @@ export const StatusDropdown: React.FC<StatusDropdownProps> = ({
         createPortal(
           <div
             ref={dropdownRef}
-            className={styles["status-dropdown-menu"]}
+            className={styles["filter-dropdown-menu"]}
             style={{ position: "absolute", top: dropdownPosition.top, left: dropdownPosition.left }}
           >
-            {statusOptions.map((status) => (
+            {filterOptions.map((filterOption) => (
               <div
-                key={status}
-                className={styles["status-dropdown-item"]}
-                onClick={() => handleStatusSelect(status)}
+                key={filterOption}
+                className={styles["filter-dropdown-item"]}
+                onClick={() => handleFilterSelect(filterOption)}
               >
-                {status}
+                {filterOption}
               </div>
             ))}
             <div
-              className={styles["status-dropdown-item"]}
-              onClick={() => handleStatusSelect(null)}
+              className={styles["filter-dropdown-item"]}
+              onClick={() => handleFilterSelect('')}
               style={{ fontWeight: "bold", color: "#FF6347" }}
             >
               Clear Filter

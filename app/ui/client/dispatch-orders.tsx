@@ -9,6 +9,7 @@ export default async function DispatchOrders() {
             orders={orders} 
             orderType="dispatches"
             statusOptions={["Pending", "Picked Up"]}
+            dateOptions={["1 week", "3 months", "2024"]}
         />
     );
 }

@@ -8,57 +8,53 @@ import {
   ContainerReceiptInterface,
   DispatchOrderInterface,
 } from "@/app/lib/data";
-import {
-  filterContainersReceipt,
-  filterDispatchOrders,
-} from "@/app/ui/common/orders/utils/search-filter";
+import { getFilteredOrders } from "@/app/ui/common/orders/utils/order-filters"; // Import the new function
 import {
   renderContainerReceiptDetails,
   renderDispatchOrderDetails,
 } from "@/app/ui/common/orders/utils/order-render-details";
 import { OrderList } from "@/app/ui/common/orders/order-list/order-list";
-import { Pagination } from "@/app/ui/common/orders/pagination/pagination";
-import { StatusDropdown } from "@/app/ui/common/orders/status-dropdown/status-dropdown";
+import { Pagination } from "@/app/ui/common/pagination/pagination";
+import { FilterByDropdown } from "../common/filter-by-dropdown/filter-by-dropdown";
 
 interface OrdersProps {
   orders: OrderInterface[];
   orderType: "containers" | "dispatches"; // New prop to specify the type of order
   statusOptions: string[];
+  dateOptions: string[];
 }
 
 export const ClientOrders: React.FC<OrdersProps> = ({
   orders,
   orderType,
   statusOptions,
+  dateOptions
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentOrders, setCurrentOrders] = useState<OrderInterface[]>([]); // State to track current orders displayed per page
-  const [selectedStatus, setSelectedStatus] = useState<string | null>(null); // State for selected status
+  const [selectedStatus, setSelectedStatus] = useState<string>(''); // State for selected status
+  const [selectedDate, setSelectedDate] = useState<string>(''); // State for selected date
   const ordersPerPage = 5;
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  const handleStatusSelect = (status: string | null) => {
+  const handleStatusSelect = (status: string) => {
     setSelectedStatus(status); // Set the selected status
   };
 
-  const filteredOrders =
-    orderType === "containers"
-      ? filterContainersReceipt(orders, searchTerm).filter((order) => {
-          const normalizedStatus =
-            order.status === "At Warehouse" ||
-            order.status === "Confirmed Inventory"
-              ? "At Warehouse"
-              : "Pending";
-          return selectedStatus ? normalizedStatus === selectedStatus : true;
-        })
-      : filterDispatchOrders(orders, searchTerm).filter((order) => {
-          const normalizedStatus =
-            order.status === "Picked Up" ? "Picked Up" : "Pending";
-          return selectedStatus ? normalizedStatus === selectedStatus : true;
-        });
+  const handleDateSelect = (date: string) => {
+    setSelectedDate(date); // Set the selected date
+  };
+
+  const filteredOrders = getFilteredOrders(
+    orders,
+    orderType,
+    searchTerm,
+    selectedStatus,
+    selectedDate
+  );
 
   const renderDetails =
     orderType === "containers"
@@ -75,21 +71,30 @@ export const ClientOrders: React.FC<OrdersProps> = ({
 
   return (
     <div className={styles["orders-layout"]}>
-      <div className={styles["orders-header-font"]}>{`${
-        orderType == "containers" ? "Containers" : "Dispatches"
-      }`}</div>
+      <div className="flex flex-col gap-[1rem] lg:flex-row lg:justify-between">
+        <div className={styles["orders-header-font"]}>{`${
+          orderType == "containers" ? "Containers" : "Dispatches"
+        }`}</div>
+        <div>
+          <Button className={styles["add-order-button"]}>{`${
+            orderType == "containers" ? "Add Container +" : "Add Dispatch +"
+          }`}</Button>
+        </div>
+      </div>
       <div className={styles["actions-container"]}>
         <div className={styles["buttons-layout"]}>
-          <StatusDropdown
-            selectedStatus={selectedStatus}
-            onStatusSelect={handleStatusSelect}
-            statusOptions={statusOptions}
+          <FilterByDropdown
+            filterType="Date"
+            selectedFilter={selectedDate}
+            onFilterSelect={handleDateSelect}
+            filterOptions={dateOptions}
           />
-          <div>
-            <Button className={styles["add-order-button"]}>{`${
-              orderType == "containers" ? "Add Container +" : "Add Dispatch +"
-            }`}</Button>
-          </div>
+          <FilterByDropdown
+            filterType="Status"
+            selectedFilter={selectedStatus}
+            onFilterSelect={handleStatusSelect}
+            filterOptions={statusOptions}
+          />
         </div>
         <div className={styles["search-container"]}>
           <img
