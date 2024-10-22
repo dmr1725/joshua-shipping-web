@@ -2,7 +2,7 @@ import AdminSideBar from "../ui/admin/admin-sidebar";
 import DashboardHeaderWrapper from "../ui/common/header/admin-wrapper";
 import { DashboardHeaderSkeleton } from "../ui/common/header/skeleton";
 import { Suspense } from "react";
-import styles from "./layout.module.css";
+import styles from "../dashboard/layout.module.css";
 
 export default function Layout({ children } : { children: React.ReactNode}){
     return (
