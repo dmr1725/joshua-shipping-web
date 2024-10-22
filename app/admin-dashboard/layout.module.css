@@ -1,0 +1,70 @@
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 25% 75%; /* Sidebar takes 25%, content takes 75% */
+    height: 100vh; /* Full viewport height */
+}
+
+.sidebar-layout {
+    grid-column: 1 / 2; /* Sidebar occupies the first column */
+    position: fixed; /* Keep the sidebar fixed */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height for the sidebar */
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+    background: #04283A;
+    box-shadow: 2px 2px 6px 0.5px rgba(135, 183, 209, 0.25); /* Sidebar shadow */
+}
+
+.content-layout {
+    grid-column: 2 / 3; /* Content occupies the second column */
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 4.5rem;
+    overflow-y: visible; /* Enable vertical scrolling */
+    height: 100vh; /* Full height for content */
+    gap: 1rem; /* Space between elements */
+    min-width: 65rem;
+    margin-right: 7.5rem;
+}
+
+
+.header-layout {
+    height: 8.5rem; /* Fixed height for the header */
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.children-layout {
+    padding-top: 2rem; /* Padding for the child layout */
+    flex-grow: 1; /* Let children grow to take up space */
+}
+
+@media (max-width: 64rem) {
+    .dashboard-layout {
+        grid-template-columns: 100%; /* One column layout for mobile */
+        height: auto; /* Let the height adjust to content */
+    }
+
+    .sidebar-layout {
+        grid-column: 1 / -1; /* Sidebar takes the full width on mobile */
+        width: 100%; /* Full width */
+        height: 5.5rem; /* Adjust sidebar height on mobile */
+    }
+
+    .content-layout {
+        grid-column: 1 / -1; /* Content takes full width on mobile */
+        width: auto; /* Set width to auto to prevent overflow */
+        margin: 0 auto; /* Center content */
+        padding: 1rem 2rem; /* Adjust padding for mobile */
+        height: auto; /* Adjust height for scrolling */
+        min-width: 23rem;
+        width: 100%;
+    }
+
+    .header-layout {
+        padding-top: 7rem; /* Adjust padding for header */
+    }
+}
