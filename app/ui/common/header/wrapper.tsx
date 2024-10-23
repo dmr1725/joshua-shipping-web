@@ -3,8 +3,6 @@ import { DashboardHeader } from "./header";
 
 
 export default async function DashboardHeaderWrapper() {
-    
-
     const companyName = await fetchCompanyName();
 
     return (
