@@ -1,6 +1,6 @@
 import AdminSidebar from "../ui/admin/admin-sidebar";
 import DashboardLayout from "../dashboard-layout";
-import AdminDashboardHeader from "../ui/admin/admin-wrapper";
+import AdminDashboardHeader from "../ui/admin/admin-header";
 
 export default function Layout({ children } : { children: React.ReactNode}){
     return (
