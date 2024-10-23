@@ -1,0 +1,71 @@
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.step-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+}
+
+.step-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.circle {
+    width: 2.25rem; /* 50px */
+    height: 2.25rem; /* 50px */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* 24px */
+    border: 0.125rem solid #C6DEEB; /* 2px */
+    z-index: 1; /* Ensure circles are above lines */
+}
+
+.completed {
+    background-color: #0078a0; /* Completed color */
+    color: white;
+}
+
+.pending {
+    background-color: #C6DEEB;
+    border: 0.125rem solid #C6DEEB;
+    color: #C6DEEB;
+}
+
+.line {
+    height: 0.25rem; /* 4px */
+    background-color: #C6DEEB;
+    position: absolute;
+    top: 50%;
+    z-index: 0; /* Behind the circle */
+    left: 50%; /* Start from the middle of the current circle */
+    right: -50%; /* End at the beginning of the next circle */
+}
+
+.completed-line {
+    background-color: #2D7FA9;
+}
+
+.pending-line {
+    background-color: #C6DEEB;
+}
+
+.step-label {
+    margin-top: 0.625rem; /* 10px */
+    font-size: 0.875rem; /* 14px */
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure labels are above lines */
+}
