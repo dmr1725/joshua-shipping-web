@@ -1,6 +1,6 @@
 import { DashboardHeader } from "./header";
 
-export default function AdminDashboardHeaderWrapper() {
+export default function AdminDashboardHeader() {
     return (
         <>
             <DashboardHeader companyName="Joshua Shipping" />
