@@ -1,6 +1,6 @@
 .progress-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top so circles stay aligned */
     justify-content: space-between;
     width: 100%;
 }
@@ -19,23 +19,25 @@
     justify-content: center;
     position: relative;
     width: 100%;
+    margin-bottom: 2rem; /* Space for label */
 }
 
 .circle {
-    width: 2.25rem; /* 50px */
-    height: 2.25rem; /* 50px */
+    width: 2.25rem; /* 36px */
+    height: 2.25rem; /* 36px */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem; /* 24px */
-    border: 0.125rem solid #C6DEEB; /* 2px */
+    font-size: 1.25rem; /* Adjusted for smaller circles */
+    border: 0.125rem solid #C6DEEB; /* Pending/Default border color */
     z-index: 1; /* Ensure circles are above lines */
 }
 
 .completed {
     background-color: #0078a0; /* Completed color */
     color: white;
+    border-color: #2D7FA9; /* Completed border color */
 }
 
 .pending {
@@ -55,17 +57,37 @@
 }
 
 .completed-line {
-    background-color: #2D7FA9;
+    background-color: #2D7FA9; /* Completed line color */
 }
 
 .pending-line {
-    background-color: #C6DEEB;
+    background-color: #C6DEEB; /* Pending line color */
 }
 
 .step-label {
-    margin-top: 0.625rem; /* 10px */
+    margin-top: 0.5rem; /* Adjusted margin */
     font-size: 0.875rem; /* 14px */
     text-align: center;
-    position: relative;
-    z-index: 2; /* Ensure labels are above lines */
+    position: absolute; /* Position it separately so it doesn't affect circle alignment */
+    top: 3.5rem; /* Push label down to avoid overlapping with the circle */
+}
+
+/* Mobile responsiveness - Shrink everything for smaller screens */
+@media (max-width: 768px) {
+    .circle {
+        width: 1.875rem; /* Smaller circles (30px) */
+        height: 1.875rem; /* Smaller circles (30px) */
+        font-size: 1rem; /* Adjusted font size inside the circle */
+    }
+
+    .line {
+        height: 0.15rem; /* Thinner line */
+        left: 50%; 
+        right: -50%; 
+    }
+
+    .step-label {
+        font-size: 0.75rem; /* Smaller font size for labels */
+        top: 2rem; /* Adjust position for smaller circles */
+    }
 }
