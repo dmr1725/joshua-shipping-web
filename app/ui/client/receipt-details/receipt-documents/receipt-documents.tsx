@@ -7,7 +7,7 @@ interface ReceiptDocumentsProps {
 
 export const ReceiptDocuments: React.FC<ReceiptDocumentsProps> = ({documents}) => {
     return (
-        <div style={{borderRadius: "1rem", background: "#FFF"}} className="flex p-[1.25rem] flex-col items-start gap-[1.25rem] self-stretch w-[50%]">
+        <div style={{borderRadius: "1rem", background: "#FFF"}} className="flex p-[1.25rem] flex-col items-start gap-[1.25rem] self-stretch w-[100%] lg:w-[50%]">
             <div className="text-[1.5rem] font-bold leading-normal not-italic">Documents</div>
             {documents.map((document) => {
                 return (
