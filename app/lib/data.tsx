@@ -16,7 +16,7 @@ export interface OrderInterface {
 
 // Interface for containers receipts
 export interface ContainerReceiptInterface extends OrderInterface {
-  ETA: Date;
+  ETA?: Date;
   container_no?: string;
   bl?: string;
 }

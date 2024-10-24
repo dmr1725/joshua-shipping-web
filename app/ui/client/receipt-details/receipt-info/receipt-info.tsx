@@ -3,7 +3,7 @@ import React from 'react';
 interface ReceiptInfoProps {
     bl?: string;
     container_no?: string;
-    ETA: Date;
+    ETA?: Date;
 }
 
 export const ReceiptInfo: React.FC<ReceiptInfoProps> = ({bl, container_no, ETA}) => {
@@ -20,7 +20,7 @@ export const ReceiptInfo: React.FC<ReceiptInfoProps> = ({bl, container_no, ETA})
             </div>
             <div style={{borderBottom: "0.5px solid #87B7D1"}} className="flex pb-[0.625rem] justify-between items-center self-stretch">
                 <div>ETA</div>
-                <div>{ETA.toLocaleDateString('en-US', { timeZone: 'UTC' })}</div>
+                <div>{ETA ? ETA.toLocaleDateString('en-US', { timeZone: 'UTC' }) : 'N/A'}</div>
             </div>
         </div>
     )
