@@ -17,11 +17,11 @@ export const renderContainerReceiptDetails = (
     </div>
     <div>
       <div>Bill of Lading</div>
-      <div>{order.bl}</div>
+      <div>{order.bl || 'N/A'}</div>
     </div>
     <div>
       <div>Container #</div>
-      <div>{order.container_no}</div>
+      <div>{order.container_no || 'N/A'}</div>
     </div>
     <div>
       <div>Receipt #{order.id}</div>
