@@ -21,7 +21,7 @@ export const ReceiptDetails: React.FC<ReceiptDetailsProps> = ({ receipt }) => {
         <ReceiptInfo bl={bl} container_no={container_no} ETA={ETA} />
         <ReceiptDocuments documents={documents} />
       </div>
-      <div style={{ borderRadius: "1rem", background: "#FFF" }}>
+      <div style={{ borderRadius: "1rem", background: "#FFF", marginBottom: "3rem"}}>
         <Lots lots={lots} />
       </div>
     </div>
