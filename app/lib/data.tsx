@@ -15,7 +15,7 @@ export interface OrderInterface {
 
 // Interface for containers receipts
 export interface ContainerReceiptInterface extends OrderInterface {
-  ETA?: Date;
+  ETA: Date;
   container_no?: string;
   bl?: string;
 }
@@ -32,7 +32,7 @@ const containerOrders: ContainerReceiptInterface[] = [
     id: "114-4893-857",
     bl: "BXTN8LW62790",
     container_no: "CMCU 773622470",
-    status: "Received",
+    status: "Submitted",
     date: new Date("2024-10-22"),
     ETA: new Date("2024-10-23"),
     lots: [],
