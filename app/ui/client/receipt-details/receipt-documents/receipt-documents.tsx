@@ -11,7 +11,7 @@ export const ReceiptDocuments: React.FC<ReceiptDocumentsProps> = ({documents}) =
             <div className="text-[1.5rem] font-bold leading-normal not-italic">Documents</div>
             {documents.map((document) => {
                 return (
-                    <div style={{borderBottom: "0.5px solid #87B7D1"}} className="flex pb-[0.625rem] gap-[0.625rem] items-center self-stretch">
+                    <div key={document} style={{borderBottom: "0.5px solid #87B7D1"}} className="flex pb-[0.625rem] gap-[0.625rem] items-center self-stretch">
                         <Image width={36} height={36} src="/icons/pdf.svg" alt="pdf icon"/>
                         <div>{document}</div>
                     </div>
