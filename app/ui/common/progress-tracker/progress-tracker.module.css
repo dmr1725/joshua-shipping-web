@@ -3,6 +3,7 @@
     align-items: flex-start; /* Align items to the top so circles stay aligned */
     justify-content: space-between;
     width: 100%;
+    z-index: 1;  /* Keep the progress tracker low in the stacking order */
 }
 
 .step-wrapper {

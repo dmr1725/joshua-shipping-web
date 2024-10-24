@@ -52,6 +52,7 @@
         grid-column: 1 / -1; /* Sidebar takes the full width on mobile */
         width: 100%; /* Full width */
         height: 5.5rem; /* Adjust sidebar height on mobile */
+        z-index: 1000; /* Ensure it stacks above the content */
     }
 
     .content-layout {
@@ -62,6 +63,7 @@
         height: auto; /* Adjust height for scrolling */
         min-width: 23rem;
         width: 100%;
+        z-index: auto; /* Ensure content does not interfere with the sidebar */
     }
 
     .header-layout {
