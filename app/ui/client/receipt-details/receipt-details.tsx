@@ -10,20 +10,21 @@ interface ReceiptDetailsProps {
 }
 
 export const ReceiptDetails: React.FC<ReceiptDetailsProps> = ({ receipt }) => {
-  const { bl, container_no, ETA, lots, status } = receipt;
-  const statusOptions = ["Submitted", "Port Pick Up", "Inspection", "At Warehouse", "Confirmed Inventory"];
-  const documents = ["Bill of Lading.pdf", "Commercial Invoice.pdf", "Receiving_Report.pdf"];
-
-  return (
-    <div className="flex flex-col gap-[2rem]"> {/* Reduce the gap here */}
-      <ProgressTracker statusOptions={statusOptions} currentStatus={status} />
-      <div className="flex flex-col gap-[2rem] pt-[2rem] lg:flex-row">
-        <ReceiptInfo bl={bl} container_no={container_no} ETA={ETA} />
-        <ReceiptDocuments documents={documents} />
+    const { bl, container_no, ETA, lots, status } = receipt;
+    const statusOptions = ["Submitted", "Port Pick Up", "Inspection", "At Warehouse", "Confirmed Inventory"];
+    const documents = ["Bill of Lading.pdf", "Commercial Invoice.pdf", "Receiving_Report.pdf"];
+  
+    return (
+      <div className="flex flex-col gap-[2rem]"> {/* Reduce the gap here */}
+        <ProgressTracker statusOptions={statusOptions} currentStatus={status} />
+        <div className="flex flex-col gap-[2rem] pt-[2rem] lg:flex-row">
+          <ReceiptInfo bl={bl} container_no={container_no} ETA={ETA} />
+          <ReceiptDocuments documents={documents} />
+        </div>
+        <div style={{ borderRadius: "1rem", background: "#FFF", marginBottom: "3rem", padding: "1rem" }}>
+          <h2 className="text-[1.5rem] font-bold leading-normal not-italic pl-[2rem]">Inventory Details</h2> {/* Added title here */}
+          <Lots lots={lots} />
+        </div>
       </div>
-      <div style={{ borderRadius: "1rem", background: "#FFF", marginBottom: "3rem"}}>
-        <Lots lots={lots} />
-      </div>
-    </div>
-  );
-};
+    );
+  };

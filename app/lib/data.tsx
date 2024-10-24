@@ -1,6 +1,7 @@
 export interface LotInterface {
   id: string;
   product: string;
+  packaging?: string;
   current_boxes?: number;
   starting_boxes?: number;
   dispatched_boxes?: number;
@@ -57,12 +58,14 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1829",
         product: "Frozen Pork Meats",
+        packaging: "4/10",
         current_boxes: 800,
         starting_boxes: 800,
       },
       {
         id: "1830",
         product: "Sweet Potato",
+        packaging: "c/w",
         current_boxes: 750,
         starting_boxes: 800,
       },
@@ -79,6 +82,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1831",
         product: "Beef",
+        packaging: "4/10",
         current_boxes: 900,
         starting_boxes: 1000,
       },
@@ -95,12 +99,14 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1832",
         product: "Corn",
+        packaging: "4/10",
         current_boxes: 300,
         starting_boxes: 400,
       },
       {
         id: "1833",
         product: "Wheat",
+        packaging: "5/7",
         current_boxes: 100,
         starting_boxes: 150,
       },
@@ -117,12 +123,14 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1834",
         product: "Rice",
+        packaging: "C/W",
         current_boxes: 600,
         starting_boxes: 650,
       },
       {
         id: "1835",
         product: "Barley",
+        packaging: "2/13",
         current_boxes: 200,
         starting_boxes: 250,
       },
@@ -139,6 +147,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1836",
         product: "Chicken",
+        packaging: "4/10",
         current_boxes: 500,
         starting_boxes: 600,
       },
@@ -155,12 +164,14 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1837",
         product: "Apples",
+        packaging: "4/10",
         current_boxes: 400,
         starting_boxes: 450,
       },
       {
         id: "1838",
         product: "Oranges",
+        packaging: "4/10",
         current_boxes: 350,
         starting_boxes: 400,
       },
@@ -177,6 +188,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1839",
         product: "Tomatoes",
+        packaging: "4/10",
         current_boxes: 200,
         starting_boxes: 250,
       },
@@ -193,12 +205,14 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1840",
         product: "Lettuce",
+        packaging: "4/10",
         current_boxes: 100,
         starting_boxes: 150,
       },
       {
         id: "1841",
         product: "Cucumbers",
+        packaging: "4/10",
         current_boxes: 75,
         starting_boxes: 100,
       },
@@ -215,6 +229,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1842",
         product: "Potatoes",
+        packaging: "4/10",
         current_boxes: 500,
         starting_boxes: 550,
       },
@@ -231,6 +246,7 @@ const containerOrders: ContainerReceiptInterface[] = [
       {
         id: "1843",
         product: "Carrots",
+        packaging: "4/10",
         current_boxes: 600,
         starting_boxes: 650,
       },
