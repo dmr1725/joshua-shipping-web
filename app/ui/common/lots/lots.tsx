@@ -10,20 +10,20 @@ export const Lots: React.FC<LotsProps> = ({ lots }) => {
     return (
         <div className={styles['lots-container']}>
             {lots.length === 0 ? (
-                <div className={styles['no-lots-message']}>Lots will be assigned on 2-3 business days.</div>
+                <div className={styles['no-lots-message']}>Lots will be assigned in 2-3 business days.</div>
             ) : (
                 lots.map((lot) => (
-                    <div key={lot.id} className={styles['lot-container']}>
-                        <div className={styles['lot-details']}>
-                            <div className={styles['lot-font']}>Lot #{lot.id}</div>
-                            <div className={styles['lot-product']}>
-                                <div>{lot.product} {lot.packaging}: {lot.dispatched_boxes ? lot.dispatched_boxes : `${lot.current_boxes}/${lot.starting_boxes}`}</div>
-                                <img className={styles['box-icon']} src="/icons/box.svg" alt="box" />
-                            </div>
-                        </div>
+                    <div key={lot.id} className={styles['lot-details']}>
+                        <span className={styles['lot-number']}>Lot #{lot.id}</span>
+                        <span className={styles['lot-product']}>{lot.product}</span>
+                        <span className={styles['lot-packaging']}>{lot.packaging}</span>
+                        <span className={styles['lot-boxes']}>
+                            {lot.dispatched_boxes ? lot.dispatched_boxes : `${lot.current_boxes}/${lot.starting_boxes}`}
+                            <img className={styles['box-icon']} src="/icons/box.svg" alt="box" />
+                        </span>
                     </div>
                 ))
             )}
         </div>
-    )
-}
+    );
+};

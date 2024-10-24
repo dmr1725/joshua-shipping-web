@@ -1,94 +1,67 @@
-.box-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 0.5rem; /* Adjust the spacing so icons are consistently aligned */
+.no-lots-message {
+    font-weight: bold;
 }
 
 .lots-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 2rem;
-}
-
-.no-lots-message {
-    font-weight: bold;
+    width: 100%;
     color: #074A6B;
-    font-size: 1.5rem;
-}
-
-.lot-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem; /* Slightly larger rounding */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtler shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effect */
-    background-color: #E3F2FD; 
-}
-
-.lot-container:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
 .lot-details {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Align all elements to the left */
-    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: #E3F2FD;
+    gap: 2rem; /* Add space between elements */
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+.lot-number {
     font-weight: bold;
-    color: #074A6B;
-    font-size: 1.5rem;
+    min-width: 6rem; /* Allocate minimum space for the lot number */
 }
 
 .lot-product {
-    display: flex;
-    align-items: center; /* Ensure icon and product details are aligned */
-    gap: 0.5rem; /* Space between text and icon */
-    margin-top: 0.5rem; /* Add some space between Lot # and product details */
+    flex: 1; /* Take up remaining space for the product name */
+    min-width: 10rem; /* Ensure some minimum space */
 }
 
-.lot-product div {
+.lot-packaging {
+    min-width: 6rem;
+}
+
+.lot-boxes {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
+.box-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
 @media (max-width: 64rem) {
-
-    .lot-container {
-        padding: 1rem; /* Reduce padding for better fit */
-        flex-direction: column; /* Stack items vertically */
-        gap: 0.75rem; /* Add some gap between elements for clarity */
-    }
-
-    .no-lots-message {
-        font-size: 1rem;
-    }
-
-    .lot-font {
-        font-size: 1rem; /* Slightly reduce font size for smaller screens */
-        text-align: left; /* Align text to the left */
-    }
-
     .lot-details {
-        flex-direction: column; /* Stack lot number and product vertically */
-        align-items: flex-start; /* Align items to the left for better readability */
-        gap: 0.5rem; /* Small gap between lot number and product */
-        width: 100%; /* Full width to ensure it fits the mobile screen */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem; /* Reduce gap for mobile */
     }
 
-    .lot-product {
-        font-size: 0.9rem; /* Slightly reduce the font size */
-        display: flex;
-        justify-content: space-between; /* Keep product and icon aligned horizontally */
-        align-items: center;
-        width: 100%; /* Ensure the lot product takes up the full width */
+    .lot-number, .lot-product, .lot-packaging, .lot-boxes {
+        min-width: unset;
     }
 
     .box-icon {
-        width: 2rem; /* Scale down the box icon for mobile */
+        width: 2rem;
         height: 2rem;
     }
 }
