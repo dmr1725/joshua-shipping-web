@@ -6,7 +6,6 @@ interface DashboardHeaderProps {
 }
 
 export const DashboardHeader : React.FC<DashboardHeaderProps> = ({companyName}) => {
-
     return (
         <div className={styles['header-container']}>
             <div>{companyName}</div>

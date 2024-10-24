@@ -1,7 +1,8 @@
 import { fetchCompanyName } from "@/app/lib/data";
-import { DashboardHeader } from "./header";
+import { DashboardHeader } from "../common/header/header";
 
-export default async function DashboardHeaderWrapper() {
+
+export default async function ClientDashboardHeader() {
     const companyName = await fetchCompanyName();
 
     return (
