@@ -468,3 +468,17 @@ export const fetchAllDispatchOrders = async (): Promise<
     }, 5000); // 5 seconds delay
   });
 };
+
+export const fetchReceiptById = async (id: string): Promise<ContainerReceiptInterface> => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const receipt = containerOrders.find(receipt => receipt.id === id);
+
+      if (receipt) {
+        resolve(receipt); // Resolve with the found receipt
+      } else {
+        reject(new Error("Receipt not found")); // Reject if no receipt is found
+      }
+    }, 1000); // Simulate async delay
+  });
+}
